@@ -11,7 +11,7 @@
 
 <h1>보안 공지</h1>
 <div class="col-md-12">
-    <a href="posts-save.html" role="button" class="btn btn-primary">글 등록</a>
+    <a href="posts/save" role="button" class="btn btn-primary">글 등록</a>
     <br>
     <br>
     <!-- 목록 출력 영역 -->
@@ -30,7 +30,10 @@
             <td>{{id}}</td>
             <td><a href="/posts/update/{{id}}">{{title}}</a></td>
             <td>{{author}}</td>
-            <td>{{modifiedDate}}</td>
+            <td>
+                {{#modifiedDate}}{{modifiedDate}}{{/modifiedDate}}
+                {{^modifiedDate}}N{{/modifiedDate}}
+            </td>
         </tr>
         {{/posts}}
         </tbody>
