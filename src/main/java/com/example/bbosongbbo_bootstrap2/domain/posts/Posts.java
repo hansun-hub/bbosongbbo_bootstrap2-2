@@ -1,15 +1,15 @@
 package com.example.bbosongbbo_bootstrap2.domain.posts;
 
 import com.example.bbosongbbo_bootstrap2.domain.BaseTimeEntity;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Getter
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Builder
 public class Posts extends BaseTimeEntity {
 
     @Id

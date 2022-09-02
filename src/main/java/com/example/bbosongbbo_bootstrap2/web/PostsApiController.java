@@ -6,7 +6,6 @@ import com.example.bbosongbbo_bootstrap2.web.dto.PostsResponseDto;
 import com.example.bbosongbbo_bootstrap2.web.dto.PostsSaveRequestDto;
 import com.example.bbosongbbo_bootstrap2.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,7 +22,7 @@ public class PostsApiController {
         return postsService.save(requestDto);
     }
 
-    @PutMapping("/posts/update/{id}")
+    @PutMapping("/posts/{id}")
     public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
         return postsService.update(id, requestDto);
     }
@@ -34,10 +33,13 @@ public class PostsApiController {
         return id;
     }
 
-    @GetMapping("/posts/update/{id}")
+    @GetMapping("/posts/{id}")
     public PostsResponseDto findById (@PathVariable Long id){
         return postsService.findById(id);
     }
 
-
+    @GetMapping("/posts/list")
+    public List<PostsListResponseDto> findAll() {
+        return postsService.findAllDesc();
+    }
 }
