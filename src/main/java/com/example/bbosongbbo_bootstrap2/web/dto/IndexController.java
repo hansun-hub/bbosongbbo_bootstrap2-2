@@ -1,21 +1,26 @@
 package com.example.bbosongbbo_bootstrap2.web.dto;
 
 import com.example.bbosongbbo_bootstrap2.services.posts.PostsService;
+import com.example.bbosongbbo_bootstrap2.services.posts.vuln_type_statsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
 
     private final PostsService postsService;
+    private final com.example.bbosongbbo_bootstrap2.services.posts.vuln_type_statsService vuln_type_statsService;
 
 
     @GetMapping("/")
-    public String index()
+    public String index(Model model)
     {
+        model.addAttribute("vuln_type_stats",vuln_type_statsService.findAllDesc());
         return "index";
     }
 
