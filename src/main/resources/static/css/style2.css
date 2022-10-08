@@ -1,0 +1,12 @@
+
+.a{
+    display: block;
+    width:300px;
+    height:100px;
+    background-color: red;
+}
+
+.tables{
+    display: block;
+    border-color:white;
+}

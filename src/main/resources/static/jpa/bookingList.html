@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Item List</title>
+</head>
+<body>
+
+<div>
+    <h2>itemList.html</h2>
+    <p>현재 <span th:text="${#lists.size(members)}" style="font-weight:bold">10</span>건의 예약정보가 등록되었습니다.</p>
+
+
+    <table>
+        <thead>
+        <tr>
+            <th width="50">#</th>
+            <th>title</th>
+            <th>author</th>
+            <th>item</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>1</th>
+            <th>홍길동</th>
+            <th>중앙동</th>
+            <th>고잔동</th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
