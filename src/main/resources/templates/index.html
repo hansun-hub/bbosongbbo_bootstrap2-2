@@ -133,7 +133,7 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="tables">
+            <a class="nav-link" href="tables.html">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Tables</span></a>
         </li>
@@ -589,6 +589,27 @@
                             </div>
                         </div>
                     </div>
+
+                    <table class="table table-horizontal table-bordered">
+                        <thead class="thead-strong">
+                        <tr>
+                            <th>통계 인덱스번호</th>
+                            <th>'취약함' 개수</th>
+                            <th>진단 날짜</th>
+                            <th>취약점 항목 4분류</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody">
+                        {{#vuln_type_stats}}
+                            <tr>
+                                <td>{{stats_index}}</td>
+                                <td>{{stats_count}}</td>
+                                <td>{{stats_date}}</td>
+                                <td>{{stats_type}}</td>
+                            </tr>
+                        {{/vuln_type_stats}}
+                        </tbody>
+                    </table>
 
                 </div>
                 <!-- /.container-fluid -->
