@@ -1,10 +1,7 @@
-{{>layout/header}}
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -132,7 +129,7 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="../templates/tables.mustache">
+            <a class="nav-link" href="../templates/tables.html">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Tables</span></a>
         </li>
@@ -300,7 +297,7 @@
                 </div>
                 <div class="col-lg-6 mb-4">
                     <div class="col-md-12">
-                        <a href="../posts/save" role="button" class="btn btn-primary">글 등록</a>
+                        <a href="./posts-save.html" role="button" class="btn btn-primary">글 등록</a>
                         <br>
                         <br>
                         <!-- 목록 출력 영역 -->
@@ -314,15 +311,12 @@
                             </tr>
                             </thead>
                             <tbody id="tbody">
-                            {{#posts}}
-                                <tr>
-                                    <td>{{id}}</td>
-                                    <td><a href="/posts/update/{{id}}">{{title}}</a></td>
-                                    <td>{{author}}</td>
-                                    <td>{{#modifiedDate}}{{modifiedDate}}{{/modifiedDate}}
-                                        {{^modifiedDate}}N{{/modifiedDate}}</td>
+                                <tr th:each="posts : ${posts}">
+                                    <td><span th:text="${posts.id}">1</span></td>
+                                    <td><a th:href="@{'/posts/update/' + ${posts.id}}"><span th:text="${posts.title}">제목</span></a></td>
+                                    <td><span th:text="${posts.author}">작성자</span></td>
+                                    <td><span th:text="${posts.modifiedDate}">수정 날짜</span></td>
                                 </tr>
-                            {{/posts}}
                             </tbody>
                         </table>
                     </div>
@@ -403,5 +397,3 @@
 </body>
 
 </html>
-
-{{>layout/footer}}
