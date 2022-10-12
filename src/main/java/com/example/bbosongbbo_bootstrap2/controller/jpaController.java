@@ -31,9 +31,9 @@ public class jpaController {
 
         try{
             //등록처리
-            System.out.println(itemDTO.getTitle());
-            System.out.println(itemDTO.getItem());
-            System.out.println(itemDTO.getAuthor());
+            System.out.println(itemDTO.getSchedule_run_date());
+            System.out.println(itemDTO.getSchedule_id());
+            System.out.println(itemDTO.getShell_num());
             System.out.println(itemDTO.toString());
 
             //1. DTO 변환 --> Entity
