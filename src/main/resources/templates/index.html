@@ -45,7 +45,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -547,7 +547,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button onClick="location.href='/jpa/memberList';">JPA Member List</button>
+
                             <!--빨간색 상자-->
                             <div class="col-lg-6 mb-4">
                                 <div class="card bg-danger text-white shadow">
@@ -589,28 +589,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <table class="table table-horizontal table-bordered">
-                        <thead class="thead-strong">
-                        <tr>
-                            <th>통계 인덱스번호</th>
-                            <th>'취약함' 개수</th>
-                            <th>진단 날짜</th>
-                            <th>취약점 항목 4분류</th>
-                        </tr>
-                        </thead>
-                        <tbody id="tbody">
-                        {{#vuln_type_stats}}
-                            <tr>
-                                <td>{{stats_index}}</td>
-                                <td>{{stats_count}}</td>
-                                <td>{{stats_date}}</td>
-                                <td>{{stats_type}}</td>
-                            </tr>
-                        {{/vuln_type_stats}}
-                        </tbody>
-                    </table>
-
                 </div>
                 <!-- /.container-fluid -->
 

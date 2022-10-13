@@ -44,7 +44,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="../templates/index.jsp">
+            <a class="nav-link" href="/">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -129,7 +129,7 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="../templates/tables.html">
+            <a class="nav-link" href="../tables.html">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Tables</span></a>
         </li>
@@ -295,27 +295,27 @@
                 <!-- Color System -->
                 <div class="row">
                 </div>
-                <div class="col-lg-6 mb-4">
+                <div class="col-lg-12 mb-4">
                     <div class="col-md-12">
                         <a href="./posts-save.html" role="button" class="btn btn-primary">글 등록</a>
                         <br>
                         <br>
                         <!-- 목록 출력 영역 -->
-                        <table class="table table-horizontal table-bordered">
+                        <table class="table table-horizontal table-bordered text-gray-900">
                             <thead class="thead-strong">
-                            <tr>
-                                <th>게시글번호</th>
-                                <th>제목</th>
-                                <th>작성자</th>
-                                <th>최종수정일</th>
+                            <tr class="bg-white text-center">
+                                <th class="col-1 border-dark">번호</th>
+                                <th class="col-7 border-dark">제목</th>
+                                <th class="col-1 border-dark">작성자</th>
+                                <th class="col-3 border-dark">최종수정일</th>
                             </tr>
                             </thead>
                             <tbody id="tbody">
-                                <tr th:each="posts : ${posts}">
-                                    <td><span th:text="${posts.id}">1</span></td>
-                                    <td><a th:href="@{'/posts/update/' + ${posts.id}}"><span th:text="${posts.title}">제목</span></a></td>
-                                    <td><span th:text="${posts.author}">작성자</span></td>
-                                    <td><span th:text="${posts.modifiedDate}">수정 날짜</span></td>
+                                <tr th:each="posts : ${posts}" class="bg-white text-center">
+                                    <td class="border-dark"><span th:text="${posts.id}">1</span></td>
+                                    <td class="border-dark"><a th:href="@{'/posts/update/' + ${posts.id}}"><span th:text="${posts.title}">제목</span></a></td>
+                                    <td class="border-dark"><span th:text="${posts.author}">작성자</span></td>
+                                    <td class="border-dark"><span th:text="${#temporals.format(posts.modifiedDate, 'yyyy-MM-dd HH:mm')}">수정 날짜</span></td>
                                 </tr>
                             </tbody>
                         </table>
