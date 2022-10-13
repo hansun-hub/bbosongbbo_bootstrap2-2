@@ -5,9 +5,10 @@ import com.example.bbosongbbo_bootstrap2.entity.Member;
 public class itemDTO {
 
     private int num;
-    private String title;
-    private String item;
-    private String author;
+    private String schedule_run_date;
+
+    private String schedule_id;
+    private String shell_num;
 
 
 
@@ -20,28 +21,28 @@ public class itemDTO {
     }
 
 
-    public String getTitle() {
-        return title;
+    public String getSchedule_run_date() {
+        return schedule_run_date;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setSchedule_run_date(String schedule_run_date) {
+        this.schedule_run_date = schedule_run_date;
     }
 
-    public String getItem() {
-        return item;
+    public String getSchedule_id() {
+        return schedule_id;
     }
 
-    public void setItem(String item) {
-        this.item = item;
+    public void setSchedule_id(String schedule_id) {
+        this.schedule_id = schedule_id;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getShell_num() {
+        return shell_num;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setShell_num(String shell_num) {
+        this.shell_num = shell_num;
     }
 
 
@@ -49,9 +50,9 @@ public class itemDTO {
     public String toString() {
         return "itemDTO{" +
                 "num=" + num +
-                ", title='" + title + '\'' +
-                ", item='" + item + '\'' +
-                ", author='" + author + '\'' +
+                ", schedule_run_date='" + schedule_run_date + '\'' +
+                ", schedule_id='" + schedule_id + '\'' +
+                ", shell_num='" + shell_num + '\'' +
                 '}';
     }
 
@@ -59,6 +60,6 @@ public class itemDTO {
 
     public Member toEntity(){
 
-        return new Member(num, title, item, author);
+        return new Member(num, schedule_run_date, schedule_id, shell_num);
     }
 }

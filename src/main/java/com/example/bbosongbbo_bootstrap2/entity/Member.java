@@ -15,13 +15,13 @@ public class Member {
     private int num;
 
     @Column
-    private String title;
+    private String schedule_run_date;
 
     @Column
-    private String item;
+    private String schedule_id;
 
     @Column
-    private String author;
+    private String shell_num;
     /*
     @javax.persistence.Id
 
@@ -44,38 +44,38 @@ public class Member {
         this.num = num;
     }
 
-    public String getTitle() {
-        return title;
+    public String getSchedule_run_date() {
+        return schedule_run_date;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setSchedule_run_date(String schedule_run_date) {
+        this.schedule_run_date = schedule_run_date;
     }
 
-    public String getItem() {
-        return item;
+    public String getSchedule_id() {
+        return schedule_id;
     }
 
-    public void setItem(String item) {
-        this.item = item;
+    public void setSchedule_id(String schedule_id) {
+        this.schedule_id = schedule_id;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getShell_num() {
+        return shell_num;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setShell_num(String author) {
+        this.shell_num = shell_num;
     }
 
     //Constructor
     public Member(){ }
 
-    public Member(int num, String title, String item, String author) {
+    public Member(int num, String schedule_run_date, String schedule_id, String shell_num) {
         this.num = num;
-        this.title = title;
-        this.item = item;
-        this.author = author;
+        this.schedule_run_date = schedule_run_date;
+        this.schedule_id = schedule_id;
+        this.shell_num = shell_num;
     }
 
     //toString()
@@ -83,9 +83,9 @@ public class Member {
     public String toString() {
         return "Member{" +
                 "num=" + num +
-                ", title='" + title + '\'' +
-                ", item='" + item + '\'' +
-                ", author='" + author + '\'' +
+                ", schedule_run_date='" + schedule_run_date + '\'' +
+                ", schedule_id='" + schedule_id + '\'' +
+                ", shell_num='" + shell_num + '\'' +
                 '}';
     }
 }

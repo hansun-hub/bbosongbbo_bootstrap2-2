@@ -47,7 +47,7 @@
             <ul class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../templates/index.jsp">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" onClick="location.href='templates/index.html';">
                     <div class="sidebar-brand-icon rotate-n-15">
                         <img src ="img/bbo_logo_175.png" alt ="bbo icon" width="60" height="60">
                         <!-- <i class="fas fa-cloud-moon"></i>-->
@@ -324,7 +324,7 @@
                                 <!--<div class="col-md-4">-->
                                     <form action="/jpa/bookingList" method="POST" id="diagnoseform">
                                         <div class="form-group">
-                                            <label for="title">&nbsp;&nbsp;&nbsp; 일시 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" id="title" name="title"> </label>
+                                            <label for="schedule_run_date">&nbsp;&nbsp;&nbsp; 일시 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" id="schedule_run_date" name="schedule_run_date"> </label>
                                         </div>
 <!--                                        <div>-->
 <!--                                            <button class="btn btn-primary" onClick="location.href='jpa/diagnoseItemSelect.html';">  진단항목 선택하기2  </button>-->
@@ -361,187 +361,187 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-01" ></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U01"' ></td>
                                                         <td>U-01</td>
                                                         <td style="color:white">root계정 원격 접속 제한</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-02"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U02"'></td>
                                                         <td>U-02</td>
                                                         <td style="color:white">패스워드 복잡성 설정</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-03"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U03"'></td>
                                                         <td>U-03</td>
                                                         <td style="color:white">계정 잠금 임계값 설정</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-04"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U04"'></td>
                                                         <td>U-04</td>
                                                         <td style="color:white">패스워드 최대 사용 기간 설정/td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-05"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U05"'></td>
                                                         <td>U-05</td>
                                                         <td style="color:white">패스워드 파일 보호</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-06"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U06"'></td>
                                                         <td>U-06</td>
                                                         <td style="color:white">root 홈, 패스 디렉터리 권한 및 패스 설정</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-07"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U07"'></td>
                                                         <td>U-07</td>
                                                         <td style="color:white">파일 및 디렉터리 소유자 설정</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-08"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U08"'></td>
                                                         <td>U-08</td>
                                                         <td style="color:white">/etc/password 파일 소유자 및 권한 설정</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-09"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U09"'></td>
                                                         <td>U-09</td>
                                                         <td style="color:white">/etc/shadow 파일 소유자 및 권한 설정</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-10"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U10"'></td>
                                                         <td>U-10</td>
                                                         <td style="color:white">/etc/hosts 파일 소유자 및 권한 설정</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-11"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U11"'></td>
                                                         <td>U-11</td>
                                                         <td style="color:white">/etc/(x)inetd.conf 파일 소유자 및 권한 설정</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-12"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U12"'></td>
                                                         <td>U-12</td>
                                                         <td style="color:white">/etc/syslog.conf 파일 소유자 및 권한 설정</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-13"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U13"'></td>
                                                         <td>U-13</td>
                                                         <td style="color:white">/etc/services 파일 소유자 및 권한 설정</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-14"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U14"'></td>
                                                         <td>U-14</td>
                                                         <td style="color:white">SUID, SGID, Sticky bit 설정 파일 점검</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-15"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U15"'></td>
                                                         <td>U-15</td>
                                                         <td style="color:white">사용자, 시스템 시작파일 및 환경파일 소유자 및 권한 설정</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-16"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U16"'></td>
                                                         <td>U-16</td>
                                                         <td style="color:white">world writable 파일 점검</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-17"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U17"'></td>
                                                         <td>U-17</td>
                                                         <td style="color:white">$HOME/.rhosts, hosts.equiv 사용 금지</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-18"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U18"'></td>
                                                         <td>U-18</td>
                                                         <td style="color:white">접속 IP 및 포트 제한</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-19"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U19"'></td>
                                                         <td>U-19</td>
                                                         <td style="color:white">cron 파일 소유자 및 권한 설정</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-20"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U20"'></td>
                                                         <td>U-20</td>
                                                         <td style="color:white">Finger 서비스 비활성화</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-21"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U21"'></td>
                                                         <td>U-21</td>
                                                         <td style="color:white">Anonymous FTP 비할성화</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-22"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U22"'></td>
                                                         <td>U-22</td>
                                                         <td style="color:white">r계열 서비스 비활성화</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-23"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U23"'></td>
                                                         <td>U-23</td>
                                                         <td style="color:white">DOS 공격에 취약한 서비스 비활성화</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-24"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U24"'></td>
                                                         <td>U-24</td>
                                                         <td style="color:white">NFS 서비스 비활성화</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-25"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U25"'></td>
                                                         <td>U-25</td>
                                                         <td style="color:white">NFS 접근통제</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-26"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U26"'></td>
                                                         <td>U-26</td>
                                                         <td style="color:white">automounted 제거</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-27"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U27"'></td>
                                                         <td>U-27</td>
                                                         <td style="color:white">RPC 서비스 확인</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-28"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U28"'></td>
                                                         <td>U-28</td>
                                                         <td style="color:white">NIS, NIS+ 점검</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-29"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U29"'></td>
                                                         <td>U-29</td>
                                                         <td style="color:white">tftp, talk 서비스 비활성화</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-30"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U30"'></td>
                                                         <td>U-30</td>
                                                         <td style="color:white">sendmail 버전점검</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="checkbox" name="item" value="U-31"></td>
+                                                        <td><input type="checkbox" name="shell_num" value='"U31"'></td>
                                                         <td>U-31</td>
                                                         <td style="color:white">스팸 메일 릴레이 제한</td>
                                                         <td>상</td>
@@ -552,204 +552,42 @@
                                         <script>
                                             function doSave(){
                                                 let chk_langs=document.getElementsByName("chk_lang");
-                                                let checked_lang_items = [];
+                                                let checked_lang_schedule_ids = [];
                                                 for(let i=0;i<chk_langs.length;i++){
                                                     if(chk_langs[i].checked){
-                                                        checked_lang_items.push(chk_langs[i].value);
+                                                        checked_lang_schedule_ids.push(chk_langs[i].value);
                                                     }
                                                 }
 
-                                                console.log(checked_lang_items);
+                                                console.log(checked_lang_schedule_ids);
 
 
-                                                let item=document.getElementsByName("item");
-                                                let checked_items = [];
-                                                for(let i=0;i<item.length;i++){
-                                                    if(item[i].checked){
-                                                        checked_items.push(item[i].value);
+                                                let schedule_id=document.getElementsByName("shell_num");
+                                                let checked_shell_nums = [];
+                                                for(let i=0;i<shell_num.length;i++){
+                                                    if(shell_num[i].checked){
+                                                        checked_shell_nums.push(shell_num[i].value);
                                                     }
                                                 }
 
-                                                console.log(checked_items);
+                                                console.log(checked_shell_nums);
 
 
                                             }
                                             function checkAll(){
                                                 let isChecked=document.getElementById("chkall").checked;
-                                                let item = document.getElementsByName("item");
-                                                for(let i=0;i<item.length;i++){
-                                                    item[i].checked = isChecked;
+                                                let shell_num = document.getElementsByName("shell_num");
+                                                for(let i=0;i<shell_num.length;i++){
+                                                    shell_num[i].checked = isChecked;
                                                 }
                                             }
 
                                         </script>
 
-<!--                                        <div class="form-group">-->
-<!--                                            <table border="1" width="1000" height="600" bordercolor="white">-->
-<!--                                                <tr align="center">-->
-<!--                                                    <td style="color:white">구분 </td>-->
-<!--                                                    <td style="color:white"> 진단코드</td>-->
-<!--                                                    <td style="color:white">진단항목</td>-->
-<!--                                                    <td style="color:white">취약도</td>-->
-<!--                                                    <td style="color:white">체크박스</td>-->
-<!--                                                <tr>-->
-<!--                                                    <td rowspan="6" align="center" style="color:white"> 가. 계정관리 </td>-->
-<!--                                                    &lt;!&ndash;                                            <td colspan="3" align="center" bgcolor="#87ceeb"> 계정관리 전체 선택 </td>&ndash;&gt;-->
-<!--                                                    &lt;!&ndash;                                            <td><input type="checkbox" /></td>&ndash;&gt;-->
-<!--                                                </tr>-->
-<!--&lt;!&ndash;                                                    <input type="checkbox" id="item" name="item">&ndash;&gt;-->
-<!--                                                <tr>-->
-<!--                                                    <td>U-01</td>-->
-<!--                                                    <td style="color:white">root계정 원격 접속 제한</td>-->
-<!--                                                    <td>상</td>-->
-<!--                                                    <td><input type="checkbox" value="U-01"/></td>-->
-<!--                                                </tr>-->
-<!--                                                <tr>-->
-<!--                                                    <td>U-02</td>-->
-<!--                                                    <td style="color:white">패스워드 복잡성 설정</td>-->
-<!--                                                    <td>상</td>-->
-<!--                                                    <td><input type="checkbox" value="U-02"/></td>-->
-<!--                                                </tr>-->
-<!--                                                <tr>-->
-<!--                                                    <td>U-03</td>-->
-<!--                                                    <td style="color:white">계정 잠금 임계값 설정</td>-->
-<!--                                                    <td>상</td>-->
-<!--                                                    <td><input type="checkbox" value="U-03"/></td>-->
-<!--                                                </tr>-->
-<!--                                            </table>-->
-<!--                                        </div>-->
                                         <div class="form-group">
-                                            <label for="author"> 대상 기기 <input type="text" id="author" name="author" placeholder="기기 선택"> </label>
+                                            <label for="schedule_id"> 대상 기기 <input type="text" id="schedule_id" name="schedule_id" placeholder="기기 선택"> </label>
                                         </div>
                                     </form>
-                                <!--                                            <label for="item"> 진단 항목-->
-                                <!--                                                <select input type="text" id="item" name="item" placeholder="항목 선택">-->
-                                <!--                                                    <option value="U01">U01</option>-->
-                                <!--                                                    <option value="U02">U02</option>-->
-                                <!--                                                    <option value="U01">U03</option>-->
-                                <!--                                                </select>-->
-                                <!--                                            </label>-->
-
-<!--                                    <p>-->
-<!--                                        <label for ="item">U01</label>-->
-<!--                                        <input type="checkbox" value="U01"/>-->
-
-<!--                                        <label for ="item">U02</label>-->
-<!--                                        <input type="checkbox" value="U02"/>-->
-
-<!--                                        <label for ="item">U03</label>-->
-<!--                                        <input type="checkbox" value="U03"/>-->
-
-<!--                                        <label for ="item">U04</label>-->
-<!--                                        <input type="checkbox" value="U04"/>-->
-
-<!--                                        <label for ="item">U05</label>-->
-<!--                                        <input type="checkbox" value="U05"/>-->
-
-<!--                                        <label for ="item">U06</label>-->
-<!--                                        <input type="checkbox" value="U06"/>-->
-
-<!--                                        <label for ="item">U07</label>-->
-<!--                                        <input type="checkbox" value="U07"/>-->
-
-<!--                                        <label for ="item">U08</label>-->
-<!--                                        <input type="checkbox" value="U08"/>-->
-
-<!--                                        <label for ="item">U09</label>-->
-<!--                                        <input type="checkbox" value="U09"/>-->
-
-<!--                                        <label for ="item">U10</label>-->
-<!--                                        <input type="checkbox" value="U10"/>-->
-
-<!--                                    </p>-->
-<!--                                    <p>-->
-
-<!--                                        <label for ="item">U11</label>-->
-<!--                                        <input type="checkbox" value="U12"/>-->
-
-<!--                                        <label for ="item">U13</label>-->
-<!--                                        <input type="checkbox" value="U13"/>-->
-
-<!--                                        <label for ="item">U14</label>-->
-<!--                                        <input type="checkbox" value="U14"/>-->
-
-<!--                                        <label for ="item">U15</label>-->
-<!--                                        <input type="checkbox" value="U15"/>-->
-
-<!--                                        <label for ="item">U16</label>-->
-<!--                                        <input type="checkbox" value="U16"/>-->
-
-<!--                                        <label for ="item">U17</label>-->
-<!--                                        <input type="checkbox" value="U17"/>-->
-
-<!--                                        <label for ="item">U18</label>-->
-<!--                                        <input type="checkbox" value="U18"/>-->
-
-<!--                                        <label for ="item">U19</label>-->
-<!--                                        <input type="checkbox" value="U19"/>-->
-
-<!--                                        <label for ="item">U20</label>-->
-<!--                                        <input type="checkbox" value="U20"/>-->
-
-<!--                                        <label for ="item">U21</label>-->
-<!--                                        <input type="checkbox" value="U21"/>-->
-
-<!--                                    </p>-->
-<!--                                    <p>-->
-
-<!--                                        <label for ="item">U22</label>-->
-<!--                                        <input type="checkbox" value="U22"/>-->
-
-<!--                                        <label for ="item">U23</label>-->
-<!--                                        <input type="checkbox" value="U23"/>-->
-
-<!--                                        <label for ="item">U24</label>-->
-<!--                                        <input type="checkbox" value="U24"/>-->
-
-<!--                                        <label for ="item">U25</label>-->
-<!--                                        <input type="checkbox" value="U25"/>-->
-
-<!--                                        <label for ="item">U26</label>-->
-<!--                                        <input type="checkbox" value="U26"/>-->
-
-<!--                                        <label for ="item">U27</label>-->
-<!--                                        <input type="checkbox" value="U27"/>-->
-
-<!--                                        <label for ="item">U28</label>-->
-<!--                                        <input type="checkbox" value="U28"/>-->
-
-<!--                                        <label for ="item">U29</label>-->
-<!--                                        <input type="checkbox" value="U29"/>-->
-
-<!--                                        <label for ="item">U30</label>-->
-<!--                                        <input type="checkbox" value="U30"/>-->
-
-<!--                                        <label for ="item">U31</label>-->
-<!--                                        <input type="checkbox" value="U31"/>-->
-
-<!--                                    </p>-->
-<!--                                    <p>-->
-
-<!--                                        <label for ="item">U32</label>-->
-<!--                                        <input type="checkbox" value="U32"/>-->
-
-<!--                                        <label for ="item">U33</label>-->
-<!--                                        <input type="checkbox" value="U33"/>-->
-
-<!--                                        <label for ="item">U34</label>-->
-<!--                                        <input type="checkbox" value="U34"/>-->
-
-<!--                                        <label for ="item">U35</label>-->
-<!--                                        <input type="checkbox" value="U35"/>-->
-
-<!--                                        <label for ="item">U36</label>-->
-<!--                                        <input type="checkbox" value="U36"/>-->
-
-<!--                                    </p>-->
-
-                                    <!-- <button class="btn btn-primary" onClick="location.href='jp>a/bookingList2.html';">  예약 조회하기  </button>
-                                    <a class="btn btn-primary" href="404.html">예약조회하기2</a>
-                                    <a href="404.html">예약조회하기2</a> -->
 
                                     <br>
                                     <button type="submit" class="btn btn-primary" id="btn-save" form="diagnoseform">  등록하기  </button>

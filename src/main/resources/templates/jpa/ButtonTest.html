@@ -15,9 +15,9 @@
         <thead>
         <tr>
             <th width="50">#</th>
-            <th>title</th>
-            <th>author</th>
-            <th>item</th>
+            <th>schedule_run_date</th>
+            <th>schedule_id</th>
+            <th>shell_num</th>
             <th>Edit</th>
             <th>Del</th>
         </tr>
@@ -25,9 +25,9 @@
         <tbody>
             <tr th:each=" member : ${members}">
                 <th th:text="${member.num}"></th>
-                <th th:text="${member.title}">홍길동</th>
-                <th th:text="${member.item}">중앙동</th>
-                <th th:text="${member.author}">고잔동</th>
+                <th th:text="${member.schedule_run_date}">홍길동</th>
+                <th th:text="${member.schedule_id}">중앙동</th>
+                <th th:text="${member.shell_num}">고잔동</th>
                 <th><a href="#">수정</a></th>
                 <th><a href="#">삭제</a></th>
             </tr>
