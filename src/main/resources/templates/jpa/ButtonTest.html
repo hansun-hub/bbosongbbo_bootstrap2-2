@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:fmt="http://java.sun.com/jsp/jstl/fmt">
 <head>
     <meta charset="UTF-8">
     <title>Item List</title>
@@ -18,6 +18,7 @@
             <th>schedule_run_date</th>
             <th>schedule_id</th>
             <th>shell_num</th>
+            <th>schedule_reg_date</th>
             <th>Edit</th>
             <th>Del</th>
         </tr>
@@ -28,6 +29,7 @@
                 <th th:text="${member.schedule_run_date}">홍길동</th>
                 <th th:text="${member.schedule_id}">중앙동</th>
                 <th th:text="${member.shell_num}">고잔동</th>
+                <th th:text="${member.schedule_reg_date}">고잔동</th>
                 <th><a href="#">수정</a></th>
                 <th><a href="#">삭제</a></th>
             </tr>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:fmt="http://java.sun.com/jsp/jstl/fmt">
 
 <!--head 입니다.-->
     <head>
@@ -324,7 +325,7 @@
                                 <!--<div class="col-md-4">-->
                                     <form action="/jpa/bookingList" method="POST" id="diagnoseform">
                                         <div class="form-group">
-                                            <label for="schedule_run_date">&nbsp;&nbsp;&nbsp; 일시 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" id="schedule_run_date" name="schedule_run_date"> </label>
+                                            <label for="schedule_run_date">&nbsp;&nbsp;&nbsp; 일시 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="datetime-local" id="schedule_run_date" name="schedule_run_date"> </label>
                                         </div>
 <!--                                        <div>-->
 <!--                                            <button class="btn btn-primary" onClick="location.href='jpa/diagnoseItemSelect.html';">  진단항목 선택하기2  </button>-->
@@ -381,7 +382,7 @@
                                                     <tr>
                                                         <td><input type="checkbox" name="shell_num" value='"U04"'></td>
                                                         <td>U-04</td>
-                                                        <td style="color:white">패스워드 최대 사용 기간 설정/td>
+                                                        <td style="color:white">패스워드 최대 사용 기간 설정</td>
                                                         <td>상</td>
                                                     </tr>
                                                     <tr>
@@ -572,7 +573,6 @@
 
                                                 console.log(checked_shell_nums);
 
-
                                             }
                                             function checkAll(){
                                                 let isChecked=document.getElementById("chkall").checked;
@@ -588,6 +588,7 @@
                                             <label for="schedule_id"> 대상 기기 <input type="text" id="schedule_id" name="schedule_id" placeholder="기기 선택"> </label>
                                         </div>
                                     </form>
+
 
                                     <br>
                                     <button type="submit" class="btn btn-primary" id="btn-save" form="diagnoseform">  등록하기  </button>
