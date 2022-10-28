@@ -28,7 +28,11 @@ public class Member extends MemberTimeEntity {
     @Column
     private String shell_num;
 
+    @Column
+    private String schedule_duration;
 
+    @Column
+    private Integer schedule_repeat;
 
 //    public Member(int num, String schedule_run_date, String schedule_id, String shell_num) {
 //    }
@@ -74,17 +78,35 @@ public class Member extends MemberTimeEntity {
         this.shell_num = shell_num;
     }
 
+    public String schedule_duration() {
+        return schedule_duration;
+    }
+
+    public void schedule_duration(String schedule_duration) {
+        this.schedule_duration = schedule_duration;
+    }
+
+    public Integer getSchedule_repeat() {
+        return schedule_repeat;
+    }
+
+    public void setSchedule_duration(Integer schedule_repeat) {
+        this.schedule_repeat = schedule_repeat;
+    }
+
 
 
 
     //Constructor
     public Member(){ }
 
-    public Member(int num, String schedule_run_date, String schedule_id, String shell_num) {
+    public Member(int num, String schedule_run_date, String schedule_id, String shell_num,String schedule_duration,Integer schedule_repeat) {
         this.num = num;
         this.schedule_run_date = schedule_run_date;
         this.schedule_id = schedule_id;
         this.shell_num = shell_num;
+        this.schedule_duration=schedule_duration;
+        this.schedule_repeat = schedule_repeat;
     }
 
     //toString()
@@ -95,6 +117,8 @@ public class Member extends MemberTimeEntity {
                 ", schedule_run_date='" + schedule_run_date + '\'' +
                 ", schedule_id='" + schedule_id + '\'' +
                 ", shell_num='" + shell_num + '\'' +
+                ", schedule_duration='" + schedule_duration + '\'' +
+                ", schedule_repeat='" + schedule_repeat + '\'' +
                 '}';
     }
 

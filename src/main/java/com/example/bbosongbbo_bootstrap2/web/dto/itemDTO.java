@@ -2,6 +2,7 @@ package com.example.bbosongbbo_bootstrap2.web.dto;
 
 import com.example.bbosongbbo_bootstrap2.entity.Member;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
@@ -13,7 +14,8 @@ public class itemDTO {
 
     private String schedule_id;
     private String shell_num;
-
+    private String schedule_duration;
+    private Integer schedule_repeat;
 
 
     public int getNum() {
@@ -49,7 +51,18 @@ public class itemDTO {
         this.shell_num = shell_num;
     }
 
+    public String getSchedule_duration() {
+        return schedule_duration;
+    }
 
+    public void setSchedule_duration(String schedule_duration) {
+        this.schedule_duration = schedule_duration;
+    }
+
+    public Integer getSchedule_repeat() { return schedule_repeat; }
+    public void setSchedule_repeat(Integer schedule_repeat) {
+        this.schedule_repeat = schedule_repeat;
+    }
 
     @Override
     public String toString() {
@@ -58,6 +71,8 @@ public class itemDTO {
                 ", schedule_run_date='" + schedule_run_date + '\'' +
                 ", schedule_id='" + schedule_id + '\'' +
                 ", shell_num='" + shell_num + '\'' +
+                ", schedule_duration='" + schedule_duration + '\'' +
+                ", schedule_repeat='" + schedule_repeat + '\'' +
                 '}';
     }
 
@@ -65,6 +80,6 @@ public class itemDTO {
 
     public Member toEntity(){
 
-        return new Member(num, schedule_run_date, schedule_id, shell_num);
+        return new Member(num, schedule_run_date, schedule_id, shell_num,schedule_duration,schedule_repeat);
     }
 }

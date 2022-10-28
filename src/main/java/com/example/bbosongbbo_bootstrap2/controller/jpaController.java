@@ -34,6 +34,8 @@ public class jpaController {
             System.out.println(itemDTO.getSchedule_run_date());
             System.out.println(itemDTO.getSchedule_id());
             System.out.println(itemDTO.getShell_num());
+            System.out.println(itemDTO.getSchedule_duration());
+            System.out.println(itemDTO.getSchedule_repeat());
             System.out.println(itemDTO.getNum());
 
             //1. DTO 변환 --> Entity
