@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
@@ -27,6 +29,19 @@ public class IndexController {
     public String tables(Model model) {
         model.addAttribute("posts",postsService.findAllDesc());
         return "tables.html";
+    }
+
+    @ResponseBody
+    @GetMapping("posts")
+
+    public List<PostsListResponseDto> findAll() {
+        return postsService.findAllDesc();
+    }
+
+    @ResponseBody
+    @GetMapping("posts/{id}")
+    public PostsResponseDto findById (@PathVariable Long id){
+        return postsService.findById(id);
     }
 
     @GetMapping("/posts-save.html")

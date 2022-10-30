@@ -33,10 +33,7 @@ public class PostsApiController {
         return id;
     }
 
-    @GetMapping("/posts/{id}")
-    public PostsResponseDto findById (@PathVariable Long id){
-        return postsService.findById(id);
-    }
+
 
     @GetMapping("/posts/list")
     public List<PostsListResponseDto> findAll() {
