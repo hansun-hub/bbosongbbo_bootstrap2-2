@@ -1,18 +1,22 @@
-var ctx = document.getElementById("myChart").getContext('2d');
+var ctx3 = document.getElementById("doughnutChart").getContext('2d');
 
-var myChart = {
+var doughnutChart = {
     labels : [],
     dataSets : [],
     render : function() {
-        new Chart(ctx, {
-            type: 'bar',
+        new Chart(ctx3, {
+            type: 'doughnut',
             data: {
-                labels: myChart.labels,
+                labels: doughnutChart.labels,
                 datasets: [{
                     label: "취약점 분류",
                     lineTension: 0.3,
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255,99,132,1)',
+                    backgroundColor: ['rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'],
+                    borderColor: ['rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'],
                     pointRadius: 5,
                     pointBackgroundColor: "rgba(2,117,216,1)",
                     pointBorderColor: "rgba(255,255,255,0.8)",
@@ -20,33 +24,11 @@ var myChart = {
                     pointHoverBackgroundColor: "rgba(2,117,216,1)",
                     pointHitRadius: 50,
                     pointBorderWidth: 2,
-                    data: myChart.dataSets,
+                    data: doughnutChart.dataSets,
                 }],
             },
             options: {
                 responsive : true,
-                scales: {
-                    xAxes: [{
-                        time: {
-                            unit: 'month'
-                        },
-                        gridLines: {
-                            display: false
-                        },
-                        ticks: {
-                            maxTicksLimit: 7
-                        }
-                    }],
-                    yAxes: [{
-                        ticks: {
-                            min: 0,
-                            max: 7,
-                        },
-                        gridLines: {
-                            color: "rgba(0, 0, 0, .125)",
-                        }
-                    }],
-                },
                 legend: {
                     display: false
                 }
@@ -58,7 +40,7 @@ var myChart = {
         dataSets= [];
         $.ajax({
             type : 'GET',
-            url : 'vuln_type_stats/2022-10-22',
+            url : 'vuln_type_stats/2022-10-21',
             contentType: 'application/json',
             //dataType 정의
             dataType: 'json',
@@ -66,10 +48,10 @@ var myChart = {
             success : function(data) {
                 //console.log(data);
                 $.each(data, function(index,obj){
-                    myChart.labels.push(obj.stats_type);
-                    myChart.dataSets.push(obj.stats_count);
+                    doughnutChart.labels.push(obj.stats_type);
+                    doughnutChart.dataSets.push(obj.stats_count);
                 });
-                myChart.render();
+                doughnutChart.render();
             },
             //요청결과가 실패일 경우
             error : function(xhr, status, error){
@@ -78,4 +60,4 @@ var myChart = {
     }
 };
 
-myChart.showData();
+doughnutChart.showData();

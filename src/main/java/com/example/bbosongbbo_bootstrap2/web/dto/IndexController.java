@@ -1,12 +1,10 @@
 package com.example.bbosongbbo_bootstrap2.web.dto;
 
-import com.example.bbosongbbo_bootstrap2.domain.posts.Posts;
 import com.example.bbosongbbo_bootstrap2.services.posts.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
