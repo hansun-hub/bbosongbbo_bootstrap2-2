@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:fmt="http://java.sun.com/jsp/jstl/fmt">
+
+<!--head 입니다.-->
+<head>
+  <meta charset="utf-8">
+  <title>취약점 분석_BBO - main </title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="favicon" href="img/favicon.ico">
+  <link href="css/style2.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link
+          href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Heroic Features - Start Bootstrap Template</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Bootstrap icons-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/style3.css" rel="stylesheet" />
+
+  <style>
+    main{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    main > table{
+      width: 1000px;
+      height: 500px;
+      color : white;
+    }
+
+  </style>
+  <!--        script 추가해도 아무 이상 없음-->
+</head>
+
+
+<!--body부분입니다.-->
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+  <!-- Sidebar 시작입니다-->
+  <ul class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" onClick="location.href='templates/index.html';">
+      <div class="sidebar-brand-icon rotate-n-15">
+        <img src ="img/bbo_logo_175.png" alt ="bbo icon" width="60" height="60">
+        <!-- <i class="fas fa-cloud-moon"></i>-->
+      </div>
+      <div class="sidebar-brand-text mx-3"> <sup></sup></div>
+    </a>
+
+
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+      <a class="nav-link" href="/">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Dashboard</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+      Interface
+    </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+         aria-expanded="true" aria-controls="collapseTwo">
+        <i class="fas fa-fw fa-cog"></i>
+        <span>Components</span>
+      </a>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Custom Components:</h6>
+          <a class="collapse-item" href="buttons.html">Buttons</a>
+          <a class="collapse-item" href="cards.html">Cards</a>
+        </div>
+      </div>
+    </li>
+
+    <!-- Nav Item - Utilities Collapse Menu -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+         aria-expanded="true" aria-controls="collapseUtilities">
+        <i class="fas fa-fw fa-wrench"></i>
+        <span>Utilities</span>
+      </a>
+      <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+           data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Custom Utilities:</h6>
+          <a class="collapse-item" href="utilities-color.html">Colors</a>
+          <a class="collapse-item" href="utilities-border.html">Borders</a>
+          <a class="collapse-item" href="utilities-animation.html">Animations</a>
+          <a class="collapse-item" href="utilities-other.html">Other</a>
+        </div>
+      </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+      Addons
+    </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+         aria-expanded="true" aria-controls="collapsePages">
+        <i class="fas fa-fw fa-folder"></i>
+        <span>Pages</span>
+      </a>
+      <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Login Screens:</h6>
+          <a class="collapse-item" href="login.html">Login</a>
+          <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+          <div class="collapse-divider"></div>
+          <h6 class="collapse-header">Other Pages:</h6>
+          <a class="collapse-item" href="vulnExplain.html">취약점 설명</a>
+          <a class="collapse-item" href="vuln-test.html">취약점 진단</a>
+        </div>
+      </div>
+    </li>
+
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+      <a class="nav-link" href="charts.html">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>Charts</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+      <a class="nav-link" href="../tables.html">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Tables</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+      <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+
+  </ul>
+  <!-- End of Sidebar -->
+  <!--사이드 바 끝입니다.-->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column bg-white">
+
+    <!-- Main Content -->
+    <!--    <div class="bg-dark" id="content">-->
+
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container px-lg-5">
+        <a class="navbar-brand" href="#!">파일 및 디렉토리 관리의 진단항목과 진단기준 소개</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">취약점 설명</a></li>
+            <!--                <li class="nav-item"><a class="nav-link" href="index.html"> home </a></li>-->
+            <li class="nav-item"><a class="nav-link" href="#!" onClick="location.href='vuln-test.html';"> 점검하러가기</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Begin Page Content -->
+    <!--<div class="container-fluid">-->
+
+    <!-- Color System -->
+    <!--header-->
+    <header class="py-5">
+      <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+          <div class="m-4 m-lg-5">
+            <h1 class="fs-4 fw-bold"> root 홈, 패스 디렉터리 권한 및 패스 설정</h1>
+            <p></p>
+            <p class="mb-0">양호 : PATH 환경변수에 "."이 맨 앞이나 중간에 포함되지 않은 경우</p>
+            <p class="mb-0">취약 : PATH 환경변수에 "."이 맨 앞이나 중간에 포함된 경우</p>
+            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
+          </div>
+        </div>
+      </div>
+    </header>
+    <header class="py-5">
+      <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+          <div class="m-4 m-lg-5">
+            <h1 class="fs-4 fw-bold">파일 및 디렉터리 소유자 설정</h1>
+            <p></p>
+            <p class="mb-0">양호 : 소유자나 그룹이 존재하지 않는 파일 및 디렉터리가 없는 경우</p>
+            <p class="mb-0">취약 : 소유자나 그룹이 존재하지 않는 파일 및 디렉터리가 있는 경우</p>
+            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
+          </div>
+        </div>
+      </div>
+    </header>
+    <header class="py-5">
+      <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+          <div class="m-4 m-lg-5">
+            <h1 class="fs-4 fw-bold">/etc/passwd/ 파일 소유자 및 권한 설정</h1>
+            <p></p>
+            <p class="mb-0">양호 : etc/passwd/ 파일의 소유자가 root이고, 권한이 644이하인 경우</p>
+            <p class="mb-0">취약 : etc/passwd/ 파일의 소유자가 root가 아니거나, 권한이 644초과인 경우</p>
+            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
+          </div>
+        </div>
+      </div>
+    </header>
+    <header class="py-5">
+      <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+          <div class="m-4 m-lg-5">
+            <h1 class="fs-4 fw-bold">/etc/shadow 파일 소유자 및 권한 설정</h1>
+            <p></p>
+            <p class="mb-0">양호 : etc/shadow 파일의 소유자가 root이고, 권한이 400이하인 경우</p>
+            <p class="mb-0">취약 : etc/shadow 파일의 소유자가 root가 아니거나, 권한이 400초과인 경우</p>
+            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
+          </div>
+        </div>
+      </div>
+    </header>
+    <header class="py-5">
+      <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+          <div class="m-4 m-lg-5">
+            <h1 class="fs-4 fw-bold">/etc/hosts 파일 소유자 및 권한 설정</h1>
+            <p></p>
+            <p class="mb-0">양호 :  etc/hosts 파일의 소유자가 root이고, 권한이 644이하인 경우</p>
+            <p class="mb-0">취약 :  etc/hosts 파일의 소유자가 root가 아니거나, 권한이 644초과인 경우</p>
+            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
+          </div>
+        </div>
+      </div>
+    </header>
+    <header class="py-5">
+      <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+          <div class="m-4 m-lg-5">
+            <h1 class="fs-4 fw-bold">/etc/(x)inetd.conf 파일 소유자 및 권한 설정</h1>
+            <p></p>
+            <p class="mb-0">양호 :  etc/(x)inetd.conf 파일의 소유자가 root이고, 권한이 644이하인 경우</p>
+            <p class="mb-0">취약 :  etc/(x)inetd.conf 파일의 소유자가 root가 아니거나, 권한이 644초과인 경우</p>
+            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
+          </div>
+        </div>
+      </div>
+    </header>
+    <header class="py-5">
+      <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+          <div class="m-4 m-lg-5">
+            <h1 class="fs-4 fw-bold">/etc/(r)syslog.conf 파일 소유자 및 권한 설정</h1>
+            <p></p>
+            <p class="mb-0">양호 :  etc/(r)syslog.conf 파일의 소유자가 root이고, 권한이 644이하인 경우</p>
+            <p class="mb-0">취약 :  etc/(r)syslog.conf 파일의 소유자가 root가 아니거나, 권한이 644초과인 경우</p>
+            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
+          </div>
+        </div>
+      </div>
+    </header>
+    <header class="py-5">
+      <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+          <div class="m-4 m-lg-5">
+            <h1 class="fs-4 fw-bold">/etc/services 파일 소유자 및 권한 설정</h1>
+            <p></p>
+            <p class="mb-0">양호 :  etc/services 파일의 소유자가 root이고, 권한이 644이하인 경우</p>
+            <p class="mb-0">취약 :  etc/services 파일의 소유자가 root가 아니거나, 권한이 644초과인 경우</p>
+            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
+          </div>
+        </div>
+      </div>
+    </header>
+    <header class="py-5">
+      <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+          <div class="m-4 m-lg-5">
+            <h1 class="fs-4 fw-bold">SUID, SGID, Sticky bit 설정 파일 점검</h1>
+            <p></p>
+            <p class="mb-0">양호 : 주요 실행파일의 권한에 SUID와 SGID에 대한 설정이 부여되어 있지 않은 경우</p>
+            <p class="mb-0">취약 : 주요 실행파일의 권한에 SUID와 SGID에 대한 설정이 부여되어 있는 경우</p>
+            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
+          </div>
+        </div>
+      </div>
+    </header>
+    <header class="py-5">
+      <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+          <div class="m-4 m-lg-5">
+            <h1 class="fs-4 fw-bold">사용자, 시스템 시작파일 및 환경파일 소유자 및 권한 설정</h1>
+            <p></p>
+            <p class="mb-0">양호 : 사용자, 시스템 시작파일 및 환경파일 소유자가 root 또는 해당 계정이고 권한이 644로 설정되어 있는 경우</p>
+            <p class="mb-0">취약 : 사용자, 시스템 시작파일 및 환경파일 소유자가 root 또는 해당 계정이 아니거나 권한이 644로 설정되어 있지 않은 경우</p>
+            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
+          </div>
+        </div>
+      </div>
+    </header>
+    <header class="py-5">
+      <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+          <div class="m-4 m-lg-5">
+            <h1 class="fs-4 fw-bold">world writable 파일 점검</h1>
+            <p></p>
+            <p class="mb-0">양호 : world writable 파일이 존재하지 않거나, 존재 시 설정 이유를 확인하고 있는 경우</p>
+            <p class="mb-0">취약 : world writable 파일이 존재하나, 해당 설정 이유를 확인하고 있지 않는 경우</p>
+            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
+          </div>
+        </div>
+      </div>
+    </header>
+    <header class="py-5">
+      <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+          <div class="m-4 m-lg-5">
+            <h1 class="fs-4 fw-bold">$HOME/.rhosts, hosts.equiv 사용 금지</h1>
+            <p></p>
+            <p class="mb-0">양호 : login, shell, exec 서비스를 사용하지 않거나, 사용 시 아래와 같은 설정이 적용된 경우</p>
+            <p class="mb-0">취약 : login, shell, exec 서비스를 사용하거나, 사용 시 아래와 같은 설정이 적용어 있지 않은 경우</p>
+            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
+          </div>
+        </div>
+      </div>
+    </header>
+    <header class="py-5">
+      <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+          <div class="m-4 m-lg-5">
+            <h1 class="fs-4 fw-bold">접속 IP 및 포트 제한</h1>
+            <p></p>
+            <p class="mb-0">양호 : 접속을 허용할 특정 호스트에 대한 IP 주소 및 포트 제한을 설정한 경우</p>
+            <p class="mb-0">취약 : 접속을 허용할 특정 호스트에 대한 IP 주소 및 포트 제한을 설정하지 않은 경우</p>
+            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
+          </div>
+        </div>
+      </div>
+    </header>
+    <header class="py-5">
+      <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+          <div class="m-4 m-lg-5">
+            <h1 class="fs-4 fw-bold">cron 파일 소유자 및 권한 설정</h1>
+            <p></p>
+            <p class="mb-0">양호 : /etc/crontab 파일의 소유자가 root이고, 권한이 640이하인 경우</p>
+            <p class="mb-0">취약 : /etc/crontab 파일의 소유자가 root가 아니거나, 권한이 640초과인 경우</p>
+            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Page Content-->
+    <section class="pt-4">
+      <!--<div class="container px-lg-5">-->
+      <!-- Page Features-->
+      <div class="row gx-lg-5">
+        <!--                <div class="col-lg-6 col-xxl-4 mb-5">-->
+        <!--                    <div class="card bg-light border-0 h-100">-->
+        <!--                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">-->
+        <!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-collection"></i></div>-->
+        <!--                            <h2 class="fs-4 fw-bold" onClick="location.href='account.html';">계정관리</h2>-->
+        <!--                            <p></p>-->
+        <!--                            <p class="mb-0" onClick="location.href='account.html';"> >> 계정관리 자세히 보기</p>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--                <div class="col-lg-6 col-xxl-4 mb-5">-->
+        <!--                    <div class="card bg-light border-0 h-100">-->
+        <!--                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">-->
+        <!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-cloud-download"></i></div>-->
+        <!--                            <h2 class="fs-4 fw-bold">파일 및 디렉토리 관리</h2>-->
+        <!--                            <p class="mb-0"> >> 자세히 보기</p>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--                <div class="col-lg-6 col-xxl-4 mb-5">-->
+        <!--                    <div class="card bg-light border-0 h-100">-->
+        <!--                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">-->
+        <!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-card-heading"></i></div>-->
+        <!--                            <h2 class="fs-4 fw-bold">서비스 관리</h2>-->
+        <!--                            <p class="mb-0"> >> 서비스 관리 자세히 보기</p>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+
+        <!--wrapper 끝입니다.-->
+
+        <!--</div>-->
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="py-5 bg-dark">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; bbo 2022</p></div>
+      </footer>
+      <!-- End of Footer -->
+
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+      </a>
+
+      <!-- Logout Modal-->
+      <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+           aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+              <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bootstrap core JavaScript-->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+      <!-- Core plugin JavaScript-->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+      <!-- Custom scripts for all pages-->
+      <script src="js/sb-admin-2.min.js"></script>
+
+      <!-- Page level plugins -->
+      <script src="vendor/chart.js/Chart.min.js"></script>
+
+      <!-- Page level custom scripts -->
+      <script src="js/demo/chart-area-demo.js"></script>
+      <script src="js/demo/chart-pie-demo.js"></script>
+
+      <!--<script src="/js/app/index.js"></script>-->
+
+    </section>
+
+
+  </div>
+</div>
+</body>
+</html>
+
