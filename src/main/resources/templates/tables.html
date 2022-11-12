@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -114,7 +115,11 @@
                     <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
                     <div class="collapse-divider"></div>
                     <h6 class="collapse-header">Other Pages:</h6>
+                    <a class="collapse-item" href="404.html">404 Page</a>
                     <a class="collapse-item" href="vuln-test.html">취약점 진단</a>
+
+
+
                 </div>
             </div>
         </li>
@@ -128,9 +133,9 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="../tables.html">
+            <a class="nav-link" href="tables.html">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
+                <span>보안 공지</span></a>
         </li>
 
         <!-- Divider -->
@@ -150,7 +155,7 @@
         <!-- Main Content -->
         <div class="bg-dark" id="content">
 
-            <!-- Topbar -->
+            <!-- Topbar 위에 바 -->
             <nav class="navbar navbar-expand navbar-dark bg-gray-800 topbar mb-4 static-top shadow">
 
                 <!-- Sidebar Toggle (Topbar) -->
@@ -281,7 +286,7 @@
                 </ul>
 
             </nav>
-            <!-- End of Topbar -->
+            <!-- End of Topbar 위에 bar 끝 -->
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
@@ -310,7 +315,7 @@
                             </tr>
                             </thead>
                             <tbody id="tbody">
-                                <tr th:each="posts : ${posts}" class="bg-white text-center">
+                                <tr th:each="posts : ${posts}" class="bg-white text-center" height="30">
                                     <td class="border-dark"><span th:text="${posts.id}">1</span></td>
                                     <td class="border-dark"><a th:href="@{'/posts/update/' + ${posts.id}}"><span th:text="${posts.title}">제목</span></a></td>
                                     <td class="border-dark"><span th:text="${posts.author}">작성자</span></td>

@@ -1,26 +1,18 @@
-var ctx = document.getElementById("myChart").getContext('2d');
-var input_date = document.getElementById('input_date').value;
+var ctx4 = document.getElementById("vwsChart").getContext('2d');
 
-
-var myChart = {
+var vwsChart = {
     labels : [],
     dataSets : [],
     render : function() {
-        new Chart(ctx, {
+        new Chart(ctx4, {
             type: 'bar',
             data: {
-                labels: myChart.labels,
+                labels: vwsChart.labels,
                 datasets: [{
-                    label: "취약한 개수",
+                    label: "취약점 분류",
                     lineTension: 0.3,
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(255, 159, 64, 0.2)',
-                        'rgba(255, 206, 86, 0.2)'],
-                    borderColor: [
-                        'rgba(255,99,132,1)',
-                        'rgba(255, 159, 64, 1)',
-                        'rgba(255, 206, 86, 1)'],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255,99,132,1)',
                     pointRadius: 5,
                     pointBackgroundColor: "rgba(2,117,216,1)",
                     pointBorderColor: "rgba(255,255,255,0.8)",
@@ -28,13 +20,14 @@ var myChart = {
                     pointHoverBackgroundColor: "rgba(2,117,216,1)",
                     pointHitRadius: 50,
                     pointBorderWidth: 2,
-                    data: myChart.dataSets,
+                    data: vwsChart.dataSets,
                 }],
             },
             options: {
                 responsive : true,
                 scales: {
                     xAxes: [{
+                        stacked: true,
                         time: {
                             unit: 'month'
                         },
@@ -46,6 +39,7 @@ var myChart = {
                         }
                     }],
                     yAxes: [{
+                        stacked: true,
                         ticks: {
                             min: 0,
                             max: 7,
@@ -66,7 +60,7 @@ var myChart = {
         dataSets= [];
         $.ajax({
             type : 'GET',
-            url : 'vuln_type_stats/' + input_date,
+            url : 'vuln_week_stats/list',
             contentType: 'application/json',
             //dataType 정의
             dataType: 'json',
@@ -74,10 +68,10 @@ var myChart = {
             success : function(data) {
                 //console.log(data);
                 $.each(data, function(index,obj){
-                    myChart.labels.push(obj.stats_type);
-                    myChart.dataSets.push(obj.stats_count);
+                    vwsChart.labels.push(obj.stats_week);
+                    vwsChart.dataSets.push(obj.stats_count);
                 });
-                myChart.render();
+                vwsChart.render();
             },
             //요청결과가 실패일 경우
             error : function(xhr, status, error){
@@ -86,4 +80,4 @@ var myChart = {
     }
 };
 
-myChart.showData();
+vwsChart.showData();

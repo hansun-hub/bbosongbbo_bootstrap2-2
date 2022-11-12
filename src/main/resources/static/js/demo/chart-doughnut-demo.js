@@ -9,7 +9,7 @@ var doughnutChart = {
             data: {
                 labels: doughnutChart.labels,
                 datasets: [{
-                    label: "취약점 분류",
+                    label: " ",
                     lineTension: 0.3,
                     backgroundColor: ['rgba(75, 192, 192, 0.2)',
                     'rgba(153, 102, 255, 0.2)',
@@ -30,7 +30,7 @@ var doughnutChart = {
             options: {
                 responsive : true,
                 legend: {
-                    display: false
+                    display: true
                 }
             }
         });

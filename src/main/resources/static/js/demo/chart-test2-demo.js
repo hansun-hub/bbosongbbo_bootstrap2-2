@@ -9,7 +9,7 @@ var myChart2 = {
             data: {
                 labels: myChart2.labels,
                 datasets: [{
-                    label: "취약 yes or no",
+                    label: " ",
                     lineTension: 0.3,
                     backgroundColor: ['rgba(54, 162, 235, 0.2)',
                     'rgba(255, 206, 86, 0.2)'],
@@ -28,7 +28,7 @@ var myChart2 = {
             options: {
                 responsive : true,
                 legend: {
-                    display: false
+                    display: true
                 },
                 pieceLabel: {
                     mode: "label",

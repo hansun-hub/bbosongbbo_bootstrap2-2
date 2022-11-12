@@ -2,6 +2,7 @@ package com.example.bbosongbbo_bootstrap2.services.posts;
 
 import com.example.bbosongbbo_bootstrap2.domain.posts.vuln_type_statsRepository;
 import com.example.bbosongbbo_bootstrap2.web.dto.vuln_type_statsResponseDto;
+import com.example.bbosongbbo_bootstrap2.web.dto.vuln_week_statsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
