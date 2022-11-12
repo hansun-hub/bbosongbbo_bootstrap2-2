@@ -49,6 +49,24 @@
   <!--        script 추가해도 아무 이상 없음-->
 </head>
 
+<script>
+  function chageLangSelect(){
+    var langSelect = document.getElementById("accountVuln");
+
+
+
+    // select element에서 선택된 option의 value가 저장된다.
+    var selectValue = langSelect.options[langSelect.selectedIndex].value;
+    // select element에서 선택된 option의 text가 저장된다.
+    var selectText = langSelect.options[langSelect.selectedIndex].text;
+    var gradeCd = $("#accountVuln > option:selected").attr("value2");
+    document.getElementById("subText").innerHTML = selectValue;
+    document.getElementById("mainText").innerHTML = selectText;
+    document.getElementById("mainText2").innerHTML = gradeCd;
+
+
+  }
+</script>
 
 <!--body부분입니다.-->
 <body id="page-top">
@@ -60,7 +78,7 @@
   <ul class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" onClick="location.href='templates/index.html';">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
       <div class="sidebar-brand-icon rotate-n-15">
         <img src ="img/bbo_logo_175.png" alt ="bbo icon" width="60" height="60">
         <!-- <i class="fas fa-cloud-moon"></i>-->
@@ -84,44 +102,44 @@
     <hr class="sidebar-divider">
 
     <!-- Heading -->
-    <div class="sidebar-heading">
-      Interface
-    </div>
+<!--    <div class="sidebar-heading">-->
+<!--      Interface-->
+<!--    </div>-->
 
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-         aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-fw fa-cog"></i>
-        <span>Components</span>
-      </a>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Custom Components:</h6>
-          <a class="collapse-item" href="buttons.html">Buttons</a>
-          <a class="collapse-item" href="cards.html">Cards</a>
-        </div>
-      </div>
-    </li>
+<!--    &lt;!&ndash; Nav Item - Pages Collapse Menu &ndash;&gt;-->
+<!--    <li class="nav-item">-->
+<!--      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"-->
+<!--         aria-expanded="true" aria-controls="collapseTwo">-->
+<!--        <i class="fas fa-fw fa-cog"></i>-->
+<!--        <span>Components</span>-->
+<!--      </a>-->
+<!--      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">-->
+<!--        <div class="bg-white py-2 collapse-inner rounded">-->
+<!--          <h6 class="collapse-header">Custom Components:</h6>-->
+<!--          <a class="collapse-item" href="buttons.html">Buttons</a>-->
+<!--          <a class="collapse-item" href="cards.html">Cards</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </li>-->
 
-    <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-         aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-fw fa-wrench"></i>
-        <span>Utilities</span>
-      </a>
-      <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-           data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Custom Utilities:</h6>
-          <a class="collapse-item" href="utilities-color.html">Colors</a>
-          <a class="collapse-item" href="utilities-border.html">Borders</a>
-          <a class="collapse-item" href="utilities-animation.html">Animations</a>
-          <a class="collapse-item" href="utilities-other.html">Other</a>
-        </div>
-      </div>
-    </li>
+<!--    &lt;!&ndash; Nav Item - Utilities Collapse Menu &ndash;&gt;-->
+<!--    <li class="nav-item">-->
+<!--      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"-->
+<!--         aria-expanded="true" aria-controls="collapseUtilities">-->
+<!--        <i class="fas fa-fw fa-wrench"></i>-->
+<!--        <span>Utilities</span>-->
+<!--      </a>-->
+<!--      <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"-->
+<!--           data-parent="#accordionSidebar">-->
+<!--        <div class="bg-white py-2 collapse-inner rounded">-->
+<!--          <h6 class="collapse-header">Custom Utilities:</h6>-->
+<!--          <a class="collapse-item" href="utilities-color.html">Colors</a>-->
+<!--          <a class="collapse-item" href="utilities-border.html">Borders</a>-->
+<!--          <a class="collapse-item" href="utilities-animation.html">Animations</a>-->
+<!--          <a class="collapse-item" href="utilities-other.html">Other</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </li>-->
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -145,7 +163,6 @@
           <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
           <div class="collapse-divider"></div>
           <h6 class="collapse-header">Other Pages:</h6>
-          <a class="collapse-item" href="vulnExplain.html">취약점 설명</a>
           <a class="collapse-item" href="vuln-test.html">취약점 진단</a>
         </div>
       </div>
@@ -153,16 +170,26 @@
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-      <a class="nav-link" href="charts.html">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Charts</span></a>
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages2"
+         aria-expanded="true" aria-controls="collapsePages">
+        <i class="fas fa-fw fa-folder"></i>
+        <span>조치방법 및 가이드</span></a>
+      </a>
+
+      <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <a class="collapse-item" href="account.html">계정관리</a>
+          <a class="collapse-item" href="fileAndDir.html">파일 및 디렉토리 관리</a>
+          <a class="collapse-item" href="service.html">서비스 관리</a>
+        </div>
+      </div>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
       <a class="nav-link" href="../tables.html">
         <i class="fas fa-fw fa-table"></i>
-        <span>Tables</span></a>
+        <span>보안 공지</span></a>
     </li>
 
     <!-- Divider -->
@@ -186,7 +213,7 @@
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container px-lg-5">
-        <a class="navbar-brand" href="#!">파일 및 디렉토리 관리의 진단항목과 진단기준 소개</a>
+        <a class="navbar-brand" href="#!">진단 서비스</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -199,283 +226,237 @@
     </nav>
 
     <!-- Begin Page Content -->
-    <!--<div class="container-fluid">-->
+    <div class="container-fluid">
+      <br>
+      <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-black"><big>파일 및 디렉토리 관리</big></h1>
+        <select name="accountVuln" id="accountVuln" onchange="chageLangSelect()">
+          <option value="취약점 항목 선택">&nbsp취약점 항목 선택&nbsp</option>
 
-    <!-- Color System -->
-    <!--header-->
-    <header class="py-5">
-      <div class="container px-lg-5">
-        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-          <div class="m-4 m-lg-5">
-            <h1 class="fs-4 fw-bold"> root 홈, 패스 디렉터리 권한 및 패스 설정</h1>
-            <p></p>
-            <p class="mb-0">양호 : PATH 환경변수에 "."이 맨 앞이나 중간에 포함되지 않은 경우</p>
-            <p class="mb-0">취약 : PATH 환경변수에 "."이 맨 앞이나 중간에 포함된 경우</p>
-            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
-          </div>
-        </div>
-      </div>
-    </header>
-    <header class="py-5">
-      <div class="container px-lg-5">
-        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-          <div class="m-4 m-lg-5">
-            <h1 class="fs-4 fw-bold">파일 및 디렉터리 소유자 설정</h1>
-            <p></p>
-            <p class="mb-0">양호 : 소유자나 그룹이 존재하지 않는 파일 및 디렉터리가 없는 경우</p>
-            <p class="mb-0">취약 : 소유자나 그룹이 존재하지 않는 파일 및 디렉터리가 있는 경우</p>
-            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
-          </div>
-        </div>
-      </div>
-    </header>
-    <header class="py-5">
-      <div class="container px-lg-5">
-        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-          <div class="m-4 m-lg-5">
-            <h1 class="fs-4 fw-bold">/etc/passwd/ 파일 소유자 및 권한 설정</h1>
-            <p></p>
-            <p class="mb-0">양호 : etc/passwd/ 파일의 소유자가 root이고, 권한이 644이하인 경우</p>
-            <p class="mb-0">취약 : etc/passwd/ 파일의 소유자가 root가 아니거나, 권한이 644초과인 경우</p>
-            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
-          </div>
-        </div>
-      </div>
-    </header>
-    <header class="py-5">
-      <div class="container px-lg-5">
-        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-          <div class="m-4 m-lg-5">
-            <h1 class="fs-4 fw-bold">/etc/shadow 파일 소유자 및 권한 설정</h1>
-            <p></p>
-            <p class="mb-0">양호 : etc/shadow 파일의 소유자가 root이고, 권한이 400이하인 경우</p>
-            <p class="mb-0">취약 : etc/shadow 파일의 소유자가 root가 아니거나, 권한이 400초과인 경우</p>
-            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
-          </div>
-        </div>
-      </div>
-    </header>
-    <header class="py-5">
-      <div class="container px-lg-5">
-        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-          <div class="m-4 m-lg-5">
-            <h1 class="fs-4 fw-bold">/etc/hosts 파일 소유자 및 권한 설정</h1>
-            <p></p>
-            <p class="mb-0">양호 :  etc/hosts 파일의 소유자가 root이고, 권한이 644이하인 경우</p>
-            <p class="mb-0">취약 :  etc/hosts 파일의 소유자가 root가 아니거나, 권한이 644초과인 경우</p>
-            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
-          </div>
-        </div>
-      </div>
-    </header>
-    <header class="py-5">
-      <div class="container px-lg-5">
-        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-          <div class="m-4 m-lg-5">
-            <h1 class="fs-4 fw-bold">/etc/(x)inetd.conf 파일 소유자 및 권한 설정</h1>
-            <p></p>
-            <p class="mb-0">양호 :  etc/(x)inetd.conf 파일의 소유자가 root이고, 권한이 644이하인 경우</p>
-            <p class="mb-0">취약 :  etc/(x)inetd.conf 파일의 소유자가 root가 아니거나, 권한이 644초과인 경우</p>
-            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
-          </div>
-        </div>
-      </div>
-    </header>
-    <header class="py-5">
-      <div class="container px-lg-5">
-        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-          <div class="m-4 m-lg-5">
-            <h1 class="fs-4 fw-bold">/etc/(r)syslog.conf 파일 소유자 및 권한 설정</h1>
-            <p></p>
-            <p class="mb-0">양호 :  etc/(r)syslog.conf 파일의 소유자가 root이고, 권한이 644이하인 경우</p>
-            <p class="mb-0">취약 :  etc/(r)syslog.conf 파일의 소유자가 root가 아니거나, 권한이 644초과인 경우</p>
-            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
-          </div>
-        </div>
-      </div>
-    </header>
-    <header class="py-5">
-      <div class="container px-lg-5">
-        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-          <div class="m-4 m-lg-5">
-            <h1 class="fs-4 fw-bold">/etc/services 파일 소유자 및 권한 설정</h1>
-            <p></p>
-            <p class="mb-0">양호 :  etc/services 파일의 소유자가 root이고, 권한이 644이하인 경우</p>
-            <p class="mb-0">취약 :  etc/services 파일의 소유자가 root가 아니거나, 권한이 644초과인 경우</p>
-            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
-          </div>
-        </div>
-      </div>
-    </header>
-    <header class="py-5">
-      <div class="container px-lg-5">
-        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-          <div class="m-4 m-lg-5">
-            <h1 class="fs-4 fw-bold">SUID, SGID, Sticky bit 설정 파일 점검</h1>
-            <p></p>
-            <p class="mb-0">양호 : 주요 실행파일의 권한에 SUID와 SGID에 대한 설정이 부여되어 있지 않은 경우</p>
-            <p class="mb-0">취약 : 주요 실행파일의 권한에 SUID와 SGID에 대한 설정이 부여되어 있는 경우</p>
-            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
-          </div>
-        </div>
-      </div>
-    </header>
-    <header class="py-5">
-      <div class="container px-lg-5">
-        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-          <div class="m-4 m-lg-5">
-            <h1 class="fs-4 fw-bold">사용자, 시스템 시작파일 및 환경파일 소유자 및 권한 설정</h1>
-            <p></p>
-            <p class="mb-0">양호 : 사용자, 시스템 시작파일 및 환경파일 소유자가 root 또는 해당 계정이고 권한이 644로 설정되어 있는 경우</p>
-            <p class="mb-0">취약 : 사용자, 시스템 시작파일 및 환경파일 소유자가 root 또는 해당 계정이 아니거나 권한이 644로 설정되어 있지 않은 경우</p>
-            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
-          </div>
-        </div>
-      </div>
-    </header>
-    <header class="py-5">
-      <div class="container px-lg-5">
-        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-          <div class="m-4 m-lg-5">
-            <h1 class="fs-4 fw-bold">world writable 파일 점검</h1>
-            <p></p>
-            <p class="mb-0">양호 : world writable 파일이 존재하지 않거나, 존재 시 설정 이유를 확인하고 있는 경우</p>
-            <p class="mb-0">취약 : world writable 파일이 존재하나, 해당 설정 이유를 확인하고 있지 않는 경우</p>
-            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
-          </div>
-        </div>
-      </div>
-    </header>
-    <header class="py-5">
-      <div class="container px-lg-5">
-        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-          <div class="m-4 m-lg-5">
-            <h1 class="fs-4 fw-bold">$HOME/.rhosts, hosts.equiv 사용 금지</h1>
-            <p></p>
-            <p class="mb-0">양호 : login, shell, exec 서비스를 사용하지 않거나, 사용 시 아래와 같은 설정이 적용된 경우</p>
-            <p class="mb-0">취약 : login, shell, exec 서비스를 사용하거나, 사용 시 아래와 같은 설정이 적용어 있지 않은 경우</p>
-            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
-          </div>
-        </div>
-      </div>
-    </header>
-    <header class="py-5">
-      <div class="container px-lg-5">
-        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-          <div class="m-4 m-lg-5">
-            <h1 class="fs-4 fw-bold">접속 IP 및 포트 제한</h1>
-            <p></p>
-            <p class="mb-0">양호 : 접속을 허용할 특정 호스트에 대한 IP 주소 및 포트 제한을 설정한 경우</p>
-            <p class="mb-0">취약 : 접속을 허용할 특정 호스트에 대한 IP 주소 및 포트 제한을 설정하지 않은 경우</p>
-            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
-          </div>
-        </div>
-      </div>
-    </header>
-    <header class="py-5">
-      <div class="container px-lg-5">
-        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-          <div class="m-4 m-lg-5">
-            <h1 class="fs-4 fw-bold">cron 파일 소유자 및 권한 설정</h1>
-            <p></p>
-            <p class="mb-0">양호 : /etc/crontab 파일의 소유자가 root이고, 권한이 640이하인 경우</p>
-            <p class="mb-0">취약 : /etc/crontab 파일의 소유자가 root가 아니거나, 권한이 640초과인 경우</p>
-            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
-          </div>
-        </div>
-      </div>
-    </header>
-    <!-- Page Content-->
-    <section class="pt-4">
-      <!--<div class="container px-lg-5">-->
-      <!-- Page Features-->
-      <div class="row gx-lg-5">
-        <!--                <div class="col-lg-6 col-xxl-4 mb-5">-->
-        <!--                    <div class="card bg-light border-0 h-100">-->
-        <!--                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">-->
-        <!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-collection"></i></div>-->
-        <!--                            <h2 class="fs-4 fw-bold" onClick="location.href='account.html';">계정관리</h2>-->
-        <!--                            <p></p>-->
-        <!--                            <p class="mb-0" onClick="location.href='account.html';"> >> 계정관리 자세히 보기</p>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--                <div class="col-lg-6 col-xxl-4 mb-5">-->
-        <!--                    <div class="card bg-light border-0 h-100">-->
-        <!--                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">-->
-        <!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-cloud-download"></i></div>-->
-        <!--                            <h2 class="fs-4 fw-bold">파일 및 디렉토리 관리</h2>-->
-        <!--                            <p class="mb-0"> >> 자세히 보기</p>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--                <div class="col-lg-6 col-xxl-4 mb-5">-->
-        <!--                    <div class="card bg-light border-0 h-100">-->
-        <!--                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">-->
-        <!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-card-heading"></i></div>-->
-        <!--                            <h2 class="fs-4 fw-bold">서비스 관리</h2>-->
-        <!--                            <p class="mb-0"> >> 서비스 관리 자세히 보기</p>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
+          <option value="관리자가 명령어 (예: ls, mv, cp 등)를 수행했을 root 계정의 PATH 환경변수에 “.”
+          (현재 디렉터리 지칭)이 포함되어 있으면 현재 디렉터리에 명령어와 같은 이름의 악성파일이 실행되어 악의적인
+           행위가 일어날 수 있다." value2="vi 편집기를 이용하여 root 계정의 설정파일 (~/.profile 과 /etc/profile)을 연 후, 코드 수정">U-06. root 홈, 패스 디렉터리 권한 및 패스 설정</option>
 
-        <!--wrapper 끝입니다.-->
+          <option value="삭제된 소유자의 UID와 동일한 사용자가 해당 파일, 디렉터리에 접근 가능하여 사용자 정보 등 중요 정보가 노출될 위험이 있다."
+                  value2="소유자가 존재하지 않는 파일이나 디렉터리가 불필요한 경우 rm 명령으로 삭제 또는
+                  필요한 경우 chown 명령으로 소유자 및 그룹 변경">U-07. 파일 및 디렉터리 소유자 설정</option>
 
-        <!--</div>-->
-        <!-- /.container-fluid -->
 
+          <option value="관리자(root) 외 사용자가 /etc/passwd 파일의 변조가 가능할 경우
+          shell 변조, 사용자 추가/삭제, root를 포함한 사용자 권한 획득 시도 등 악의적인 행위가 가능하다."
+                  value2="/etc/passwd 파일의 소유자 및 권한 변경(소유자 root, 권한 644)">U-08. /etc/passwd 파일 소유자 및 권한 설정</option>
+
+
+          <option value="해당 파일에 대한 권한 관리가 이루어지지 않을 시 ID 및 패스워드 정보가 외부 로 노출될 수 있다."
+                  value2="/etc/shadow 파일의 소유자 및 권한 변경 (소유자 root, 권한 400)">U-09. /etc/shadow 파일 소유자 및 권한 설정</option>
+
+
+          <option value="hosts 파일에 비인가자 쓰기 권한이 부여된 경우, 공격자는 hosts파일에 악의적인 시스템을 등록하여,
+          이를 통해 정상적인 DNS를 우회하여 악성사이트로의 접속 을 유도하는 파밍(Pharming) 공격 등에 악용될 수 있다."
+                  value2="/etc/hosts 파일의 퍼미션을 644로, 소유자를 root로 변경">U-10. /etc/hosts 파일 소유자 및 권한 설정</option>
+
+
+          <option value="(x)inetd.conf 파일에 비인가자의 쓰기 권한이 부여되어 있을 경우, 비인가자가 악의적인 프로그램을
+          등록하여 root 권한으로 불법적인 서비스를 실행할 수 있다."
+                  value2="/etc/(x)inetd.conf 파일의 퍼미션과 소유자를 확인">U-11. /etc/(x)inetd.conf 파일 소유자 및 권한 설정</option>
+
+          <option value="(r)syslog.conf 파일의 접근권한이 적절하지 않을 경우, 임의적인 파일 변조로 인 해 침입자의 흔적 또는,
+          시스템 오류 사항을 분석하기 위해 반드시 필요한 시스템 로그가 정상적으로 기록되지 않을 수 있다."
+                  value2="/etc/(r)syslog.conf 파일의 퍼미션을 644로, 소유자를 root로 변경">U-12. /etc/(r)syslog.conf 파일 소유자 및 권한 설정</option>
+
+          <option value="services 파일의 접근권한이 적절하지 않을 경우 비인가 사용자가 운영 포트 번 호를 변경하여 정상적인 서비스를
+           제한하거나, 허용되지 않은 포트를 오픈하여 악성 서비스를 의도적으로 실행할 수 있다."
+                  value2="/etc/services 파일의 퍼미션을 644로, 소유자를 root로 변경">U-13. /etc/services 파일 소유자 및 권한 설정</option>
+
+          <option value="SUID, SGID 파일의 접근권한이 적절하지 않을 경우 SUID, SGID 설정된 파일로 특정 명령어를 실행하여
+          root 권한 획득 및 정상 서비스 장애를 발생시킬 수 있다."
+                  value2="반드시 사용이 필요한 경우 특정 그룹에서만 사용하도록 제한하는 방법
+                  （일반 사 용자의 Setuid 사용을 제한함, 임의의 그룹만 가능）">U-14. SUID, SGID, Sticky bit 설정 파일 점검</option>
+
+          <option value="홈 디렉터리 내의 사용자 파일 및 사용자별 시스템 시작파일 등과 같은 환경변수 파일의 접근권한 설정이 적절하지 않을 경우
+           비인가자가 환경변수 파일을 변조 하여 정상 사용중인 사용자의 서비스가 제한될 수 있다."
+                  value2="소유자 변경 방법,일반 사용자 쓰기 권한 제거 방법">U-15. 사용자, 시스템 시작파일 및 환경파일 소유자 및 권한 설정</option>
+
+          <option value="시스템 파일과 같은 중요 파일에 world writable 설정이 될 경우, 악의적인 사용 자가 해당 파일을 마음대로 파일을
+          덧붙이거나 지울 수 있게 되어 시스템의 무단 접근 및 시스템 장애를 유발할 수 있다."
+                  value2="일반 사용자 쓰기 권한 제거 방법, 파일 삭제 방법">U-16. world writable 파일 점검</option>
+
+          <option value="rlogin, rsh 등과 같은 'r' command의 보안 설정이 적용되지 않은 경우, 원격지의 공격자가 관리자 권한으로 목표
+          시스템상의 임의의 명령을 수행시킬 수 있으며, 명 령어 원격 실행을 통해 중요 정보 유출 및 시스템 장애를 유발시킬 수 있다. 또한 공격자
+          백도어 등으로도 활용될 수 있다." value2="1) .rhosts, hosts.equiv 파일 삭제, 2) /etc/hosts.equiv 및 $HOME/.rhosts 파일의
+          소유자를 root 또는, 해당 계정 으로 변경">U-17. $HOME/.rhosts, hosts.equiv 사용 금지</option>
+
+          <option value="허용할 호스트에 대한 IP 및 포트제한이 적용되지 않은 경우, Telnet, FTP같은 보안에 취약한 네트워크 서비스를
+          통하여 불법적인 접근 및 시스템 침해사고가 발생 할 수 있다." value2="vi 편집기를 이용하여 /etc/hosts.allow 파일을 연 후 쉘코드로
+          코드 수정">U-18. 접속 IP 및 포트 제한</option>
+
+          <option value="root 외 일반사용자에게도 crontab 명령어를 사용할 수 있도록 할 경우,
+          고의 또는 실수로 불법적인 예약 파일 실행으로 시스템 피해를 일으킬 수 있다."
+                  value2="/etc/cron.allow 및 /etc/cron.deny 파일의 소유자 및 권한 변경">U-19. cron 파일 소유자 및 권한 설정</option>
+
+        </select>
       </div>
-      <!-- End of Main Content -->
+      <!--<div class="container-fluid">-->
 
-      <!-- Footer -->
-      <footer class="py-5 bg-dark">
-        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; bbo 2022</p></div>
-      </footer>
-      <!-- End of Footer -->
-
-      <!-- Scroll to Top Button-->
-      <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-      </a>
-
-      <!-- Logout Modal-->
-      <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-           aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-              <a class="btn btn-primary" href="login.html">Logout</a>
+      <!-- Color System -->
+      <!--header-->
+      <header class="py-5">
+        <div class="container px-lg-5">
+          <h1 class="fs-4 fw-bold" id="mainText">  U-06. root 홈, 패스 디렉터리 권한 및 패스 설정</h1>
+          <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+            <div class="m-4 m-lg-5">
+              <p></p>
+              <p class="mb-0" id="subText">관리자가 명령어 (예: ls, mv, cp 등)를 수행했을 root 계정의 PATH 환경변수에 “.” (현재 디렉터리 지칭)이 포함되어 있으면 현재 디렉터리에 명령어와 같은 이름의 악성파일이 실행되어 악의적인 행위가 일어날 수 있다.</p>
             </div>
           </div>
         </div>
+      </header>
+      <header class="py-5">
+        <div class="container px-lg-5">
+          <h1 class="fs-4 fw-bold">취약점 조치 방법</h1>
+          <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+            <div class="m-4 m-lg-5">
+              <!--                            <h1 class="fs-4 fw-bold">패스워드 복잡성 설정</h1>-->
+              <p></p>
+              <p class="mb-0" id="mainText2">vi 편집기를 이용하여 root 계정의 설정파일 (~/.profile 과 /etc/profile)을 연 후, 코드 수정</p>
+              <!--                            <p class="mb-0">취약 : 영문, 숫자, 특수문자를 조합하지 않거나 2종류 조합 시 10자리 미만, 2종류 이상 조합 시 8자리 미만의 패스워드가 설정된 경우(공공기관 9자리 미만)</p>-->
+              <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
+            </div>
+          </div>
+        </div>
+      </header>
+      <!--            <header class="py-5">-->
+      <!--            <div class="container px-lg-5">-->
+      <!--                <div class="p-4 p-lg-5 bg-light rounded-3 text-center">-->
+      <!--                    <div class="m-4 m-lg-5">-->
+      <!--                        <h1 class="fs-4 fw-bold">계정 잠금 임계값 설정</h1>-->
+      <!--                        <p></p>-->
+      <!--                        <p class="mb-0">양호 : 계정 잠금 임계값이 5 이하의 값으로 설정되어 있는 경우</p>-->
+      <!--                        <p class="mb-0">취약 : 계정 잠금 임계값이 설정되이 있지 않거나, 5 이하의 값으로 설정되어 있지 않은 경우</p>-->
+      <!--                        &lt;!&ndash;                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>&ndash;&gt;-->
+      <!--                    </div>-->
+      <!--                </div>-->
+      <!--            </div>-->
+      <!--            </header>-->
+      <!--            <header class="py-5">-->
+      <!--            <div class="container px-lg-5">-->
+      <!--                <div class="p-4 p-lg-5 bg-light rounded-3 text-center">-->
+      <!--                    <div class="m-4 m-lg-5">-->
+      <!--                        <h1 class="fs-4 fw-bold">패스워드 최대 사용 기간 설정</h1>-->
+      <!--                        <p></p>-->
+      <!--                        <p class="mb-0">양호 : 패스워드의 최대 사용 기간이 90일 이내로 설정되어 있는 경우</p>-->
+      <!--                        <p class="mb-0">취약 : 패스워드의 최대 사용 기간이 없거나, 90일 이내로 설정되어 있지 않은 경우</p>-->
+      <!--                        &lt;!&ndash;                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>&ndash;&gt;-->
+      <!--                    </div>-->
+      <!--                </div>-->
+      <!--            </div>-->
+      <!--            </header>-->
+      <!--            <header class="py-5">-->
+      <!--                <div class="container px-lg-5">-->
+      <!--                    <div class="p-4 p-lg-5 bg-light rounded-3 text-center">-->
+      <!--                        <div class="m-4 m-lg-5">-->
+      <!--                            <h1 class="fs-4 fw-bold">패스워드 파일 보호</h1>-->
+      <!--                            <p></p>-->
+      <!--                            <p class="mb-0">양호 : 쉐도우 패스워드를 사용하거나, 패스워드를 암호화하여 저장하는 경우</p>-->
+      <!--                            <p class="mb-0">취약 : 쉐도우 패스워드를 사용하지 않고, 패스워드를 암호화하여 저장하지 않는 경우</p>-->
+      <!--                            &lt;!&ndash;                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>&ndash;&gt;-->
+      <!--                        </div>-->
+      <!--                    </div>-->
+      <!--                </div>-->
+      <!--            </header>-->
+      <!-- Page Content-->
+      <section class="pt-4">
+        <!--<div class="container px-lg-5">-->
+        <!-- Page Features-->
+        <div class="row gx-lg-5">
+          <!--                <div class="col-lg-6 col-xxl-4 mb-5">-->
+          <!--                    <div class="card bg-light border-0 h-100">-->
+          <!--                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">-->
+          <!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-collection"></i></div>-->
+          <!--                            <h2 class="fs-4 fw-bold" onClick="location.href='account.html';">계정관리</h2>-->
+          <!--                            <p></p>-->
+          <!--                            <p class="mb-0" onClick="location.href='account.html';"> >> 계정관리 자세히 보기</p>-->
+          <!--                        </div>-->
+          <!--                    </div>-->
+          <!--                </div>-->
+          <!--                <div class="col-lg-6 col-xxl-4 mb-5">-->
+          <!--                    <div class="card bg-light border-0 h-100">-->
+          <!--                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">-->
+          <!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-cloud-download"></i></div>-->
+          <!--                            <h2 class="fs-4 fw-bold">파일 및 디렉토리 관리</h2>-->
+          <!--                            <p class="mb-0"> >> 자세히 보기</p>-->
+          <!--                        </div>-->
+          <!--                    </div>-->
+          <!--                </div>-->
+          <!--                <div class="col-lg-6 col-xxl-4 mb-5">-->
+          <!--                    <div class="card bg-light border-0 h-100">-->
+          <!--                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">-->
+          <!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-card-heading"></i></div>-->
+          <!--                            <h2 class="fs-4 fw-bold">서비스 관리</h2>-->
+          <!--                            <p class="mb-0"> >> 서비스 관리 자세히 보기</p>-->
+          <!--                        </div>-->
+          <!--                    </div>-->
+          <!--                </div>-->
+
+          <!--wrapper 끝입니다.-->
+
+          <!--</div>-->
+          <!-- /.container-fluid -->
+
+        </div>
+      </section>
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container"><p class="m-0 text-center text-white">Copyright &copy; bbo 2022</p></div>
+    </footer>
+    <!-- End of Footer -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <!-- Bootstrap core JavaScript-->
-      <script src="vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-      <!-- Core plugin JavaScript-->
-      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-      <!-- Custom scripts for all pages-->
-      <script src="js/sb-admin-2.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
 
-      <!-- Page level plugins -->
-      <script src="vendor/chart.js/Chart.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
 
-      <!-- Page level custom scripts -->
-      <script src="js/demo/chart-area-demo.js"></script>
-      <script src="js/demo/chart-pie-demo.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
 
-      <!--<script src="/js/app/index.js"></script>-->
+    <!--<script src="/js/app/index.js"></script>-->
 
     </section>
 

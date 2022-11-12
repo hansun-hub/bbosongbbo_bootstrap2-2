@@ -32,7 +32,6 @@ public class IndexController {
     @GetMapping("/posts-save.html")
     public String postsSaveForm(Model model) {
 
-
         return "posts-save.html";
     }
 

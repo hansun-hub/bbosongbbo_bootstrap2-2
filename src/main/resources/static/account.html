@@ -49,6 +49,35 @@
     <!--        script 추가해도 아무 이상 없음-->
 </head>
 
+<script>
+    function chageLangSelect(){
+        var langSelect = document.getElementById("accountVuln");
+
+
+
+        // select element에서 선택된 option의 value가 저장된다.
+        var selectValue = langSelect.options[langSelect.selectedIndex].value;
+        // select element에서 선택된 option의 text가 저장된다.
+        var selectText = langSelect.options[langSelect.selectedIndex].text;
+        var gradeCd = $("#accountVuln > option:selected").attr("value2");
+        // var gradeCd3 = $("#accountVuln > option:selected").attr("value3");
+        // var gradeCd4 = $("#accountVuln > option:selected").attr("value4");
+        // var gradeCd5 = $("#accountVuln > option:selected").attr("value5");
+        // var gradeCd6 = $("#accountVuln > option:selected").attr("value6");
+        // var gradeCd7 = $("#accountVuln > option:selected").attr("value7");
+        document.getElementById("subText").innerHTML = selectValue;
+        document.getElementById("mainText").innerHTML = selectText;
+        document.getElementById("mainText2").innerHTML = gradeCd;
+        // document.getElementById("mainText3").innerHTML = gradeCd3;
+        // document.getElementById("mainText4").innerHTML = gradeCd4;
+        // document.getElementById("mainText5").innerHTML = gradeCd5;
+        // document.getElementById("mainText6").innerHTML = gradeCd6;
+        // document.getElementById("mainText7").innerHTML = gradeCd7;
+
+
+
+    }
+</script>
 
 <!--body부분입니다.-->
 <body id="page-top">
@@ -60,7 +89,7 @@
     <ul class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" onClick="location.href='templates/index.html';">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
             <div class="sidebar-brand-icon rotate-n-15">
                 <img src ="img/bbo_logo_175.png" alt ="bbo icon" width="60" height="60">
                 <!-- <i class="fas fa-cloud-moon"></i>-->
@@ -84,44 +113,44 @@
         <hr class="sidebar-divider">
 
         <!-- Heading -->
-        <div class="sidebar-heading">
-            Interface
-        </div>
+<!--        <div class="sidebar-heading">-->
+<!--            Interface-->
+<!--        </div>-->
 
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-               aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>Components</span>
-            </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Components:</h6>
-                    <a class="collapse-item" href="buttons.html">Buttons</a>
-                    <a class="collapse-item" href="cards.html">Cards</a>
-                </div>
-            </div>
-        </li>
+<!--        &lt;!&ndash; Nav Item - Pages Collapse Menu &ndash;&gt;-->
+<!--        <li class="nav-item">-->
+<!--            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"-->
+<!--               aria-expanded="true" aria-controls="collapseTwo">-->
+<!--                <i class="fas fa-fw fa-cog"></i>-->
+<!--                <span>Components</span>-->
+<!--            </a>-->
+<!--            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">-->
+<!--                <div class="bg-white py-2 collapse-inner rounded">-->
+<!--                    <h6 class="collapse-header">Custom Components:</h6>-->
+<!--                    <a class="collapse-item" href="buttons.html">Buttons</a>-->
+<!--                    <a class="collapse-item" href="cards.html">Cards</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </li>-->
 
-        <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-               aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-wrench"></i>
-                <span>Utilities</span>
-            </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                 data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Utilities:</h6>
-                    <a class="collapse-item" href="utilities-color.html">Colors</a>
-                    <a class="collapse-item" href="utilities-border.html">Borders</a>
-                    <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                    <a class="collapse-item" href="utilities-other.html">Other</a>
-                </div>
-            </div>
-        </li>
+<!--        &lt;!&ndash; Nav Item - Utilities Collapse Menu &ndash;&gt;-->
+<!--        <li class="nav-item">-->
+<!--            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"-->
+<!--               aria-expanded="true" aria-controls="collapseUtilities">-->
+<!--                <i class="fas fa-fw fa-wrench"></i>-->
+<!--                <span>Utilities</span>-->
+<!--            </a>-->
+<!--            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"-->
+<!--                 data-parent="#accordionSidebar">-->
+<!--                <div class="bg-white py-2 collapse-inner rounded">-->
+<!--                    <h6 class="collapse-header">Custom Utilities:</h6>-->
+<!--                    <a class="collapse-item" href="utilities-color.html">Colors</a>-->
+<!--                    <a class="collapse-item" href="utilities-border.html">Borders</a>-->
+<!--                    <a class="collapse-item" href="utilities-animation.html">Animations</a>-->
+<!--                    <a class="collapse-item" href="utilities-other.html">Other</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </li>-->
 
         <!-- Divider -->
         <hr class="sidebar-divider">
@@ -145,7 +174,6 @@
                     <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
                     <div class="collapse-divider"></div>
                     <h6 class="collapse-header">Other Pages:</h6>
-                    <a class="collapse-item" href="vulnExplain.html">취약점 설명</a>
                     <a class="collapse-item" href="vuln-test.html">취약점 진단</a>
                 </div>
             </div>
@@ -153,16 +181,26 @@
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link" href="charts.html">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Charts</span></a>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages2"
+               aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>조치방법 및 가이드</span></a>
+            </a>
+
+            <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="account.html">계정관리</a>
+                    <a class="collapse-item" href="fileAndDir.html">파일 및 디렉토리 관리</a>
+                    <a class="collapse-item" href="service.html">서비스 관리</a>
+                </div>
+            </div>
         </li>
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
             <a class="nav-link" href="../tables.html">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
+                <span>보안 공지</span></a>
         </li>
 
         <!-- Divider -->
@@ -186,7 +224,7 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-lg-5">
-                <a class="navbar-brand" href="#!">계정 관리의 진단항목과 진단기준 소개</a>
+                <a class="navbar-brand" href="#!">진단 서비스</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -199,80 +237,124 @@
         </nav>
 
         <!-- Begin Page Content -->
-        <!--<div class="container-fluid">-->
+        <div class="container-fluid">
+            <br>
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-black"><big>계정관리</big></h1>
+                <select name="accountVuln" id="accountVuln" onchange="chageLangSelect()">
+                    <option value="취약점 항목 선택">&nbsp취약점 항목 선택&nbsp</option>
 
-        <!-- Color System -->
-        <!--header-->
-        <header class="py-5">
-            <div class="container px-lg-5">
-                <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-                    <div class="m-4 m-lg-5">
-                        <h1 class="fs-4 fw-bold"> root 계정 원격 접속 제한</h1>
-                        <p></p>
-                        <p class="mb-0">양호 : 원격 터미널 서비스를 사용하지 않거나, 사용 지 root 직접 접속을 차단한 경우</p>
-                        <p class="mb-0">취약 : 원격 터미널 서비스 사용 지 root 직접 접속을 허용한 경우</p>
-                        <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
+                    <option value="각종 공격(무작위 대입 공격, 사전 대입 공격 등)을 통해 root 원격 접속 차단이 적용되지 않은
+                                시스템의 root 계정 정보를 비인가자가 획득할 경우 시스템 계정 정보 유출, 파일 및
+                            디렉터리 변조 등의 행위 챔해사고가 발생할 수 있다."
+                            value2="/etc/security 파일에서 pts/0 ~ pts/x 설정 제거 또는, 주석 처리">U-01. root 계정 원격 접속 제한</option>
+
+
+                    <option value="패스워드 복잡성 설정이 되어 있지 않은 사용자 계정 패스워드 존재 시
+                    비인가자가 각종 공격(무작위 대입 공격, 사전 대입 공격 등)을 통해 취약한
+                    패스워드가 설정된 사용자 계정의 패스워드를 획득하여 획득한 사용자 계정 정보를 통해 해당
+                    사용자 계정의 시스템에 접근할 수 있는 위험이 존재한다. "
+                            value2="/etc/pam.d/common-password 파일 또는
+                    /etc/security/pwquality.conf 파일 편집"
+                    >U-02. 패스워드 복잡성 설정</option>
+
+
+                    <option value="로그인 실패 임계값이 설정되어 있지 않을 경우 반복되는 로그인 시도에 대한 차단이
+                    이루어지지 않아 각종 공격 (무작위 대입 공격, 사전 대입 공격, 추측 공격 등)에
+                    취약하여 비인가자에게 사용자 계정 패스워드를 유출 당할 수 있다."
+                            value2=" 1) /etc/pam.d/common-auth  파일 내 설정 값을 변경,
+                            2) /etc/pam.d/system-auth 및 /etc/pam.d/password-auth 파일 내 설정 값 변경">U-03. 계정 잠금 임계값 설정</option>
+
+                    <option value="패스워드 최대 사용기간을 설정하지 않은 경우 비인가자의 각종 공격 (무작위 대입 공격,
+                    사전 대입 공격 등)을 시도할 수 있는 기간 제한이 없으므로 공격자 입장에서는
+                    장기적인 공격을 시행할 수 있어 시행한 기간에 비례하여 시용자 패스워드가 유출될 수 있는
+                    확률이 증가한다." value2="User 생성 시 패스워드 최대 사용시간 적용">U-04. 패스워드 최대 사용 기간 설정</option>
+
+
+                    <option value="비인가자에 의해 사용자 계정 패스워드가 평문으로 저장된 파일이 유출된 경우
+                    시스템 사용자 계정 패스워드가 노출될 수 있다." value2="쉐도우 패스워드 정책 적용 또는 일반 패스워드 정책 적용">U-05. 패스워드 파일 보호</option>
+                </select>
+            </div>
+            <!--<div class="container-fluid">-->
+
+            <!-- Color System -->
+            <!--header-->
+            <header class="py-5">
+                <div class="container px-lg-5">
+                    <h1 class="fs-4 fw-bold" id="mainText">  U-01. root 계정 원격 접속 제한</h1>
+                    <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+                        <div class="m-4 m-lg-5">
+                            <p></p>
+                            <p class="mb-0" id="subText">각종 공격(무작위 대입 공격, 사전 대입 공격 등)을 통해 root 원격 접속 차단이 적용되지 않은
+                                시스템의 root 계정 정보를 비인가자가 획득할 경우 시스템 계정 정보 유출, 파일 및
+                            디렉터리 변조 등의 행위 챔해사고가 발생할 수 있다.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </header>
-        <header class="py-5">
-            <div class="container px-lg-5">
-                <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-                    <div class="m-4 m-lg-5">
-                        <h1 class="fs-4 fw-bold">패스워드 복잡성 설정</h1>
-                        <p></p>
-                        <p class="mb-0">양호 : 영문, 숫자, 특수문자를 조합하여 2종류 조합 시 10자리 이상, 3종류 이상 조합시 8자리 이상의 패스워드가 설정된 경우(공공기관 9자리 이상)</p>
-                        <p class="mb-0">취약 : 영문, 숫자, 특수문자를 조합하지 않거나 2종류 조합 시 10자리 미만, 2종류 이상 조합 시 8자리 미만의 패스워드가 설정된 경우(공공기관 9자리 미만)</p>
-                        <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
+            </header>
+            <header class="py-5">
+                <div class="container px-lg-5">
+                    <h1 class="fs-4 fw-bold">취약점 조치 방법</h1>
+                    <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+                        <div class="m-4 m-lg-5">
+<!--                            <h1 class="fs-4 fw-bold">패스워드 복잡성 설정</h1>-->
+                            <p></p>
+                            <p class="mb-0" id="mainText2">/etc/security 파일에서 pts/0 ~ pts/x 설정 제거 또는, 주석 처리</p>
+<!--                            <p class="mb-0">취약 : 영문, 숫자, 특수문자를 조합하지 않거나 2종류 조합 시 10자리 미만, 2종류 이상 조합 시 8자리 미만의 패스워드가 설정된 경우(공공기관 9자리 미만)</p>-->
+                            <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
+                            <p class="mb-0" id="mainText3"></p>
+                            <p class="mb-0" id="mainText4"></p>
+                            <p class="mb-0" id="mainText5"></p>
+                            <p class="mb-0" id="mainText6"></p>
+                            <p class="mb-0" id="mainText7"></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </header>
-        <header class="py-5">
-        <div class="container px-lg-5">
-            <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-                <div class="m-4 m-lg-5">
-                    <h1 class="fs-4 fw-bold">계정 잠금 임계값 설정</h1>
-                    <p></p>
-                    <p class="mb-0">양호 : 계정 잠금 임계값이 5 이하의 값으로 설정되어 있는 경우</p>
-                    <p class="mb-0">취약 : 계정 잠금 임계값이 설정되이 있지 않거나, 5 이하의 값으로 설정되어 있지 않은 경우</p>
-                    <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
-                </div>
-            </div>
-        </div>
-        </header>
-        <header class="py-5">
-        <div class="container px-lg-5">
-            <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-                <div class="m-4 m-lg-5">
-                    <h1 class="fs-4 fw-bold">패스워드 최대 사용 기간 설정</h1>
-                    <p></p>
-                    <p class="mb-0">양호 : 패스워드의 최대 사용 기간이 90일 이내로 설정되어 있는 경우</p>
-                    <p class="mb-0">취약 : 패스워드의 최대 사용 기간이 없거나, 90일 이내로 설정되어 있지 않은 경우</p>
-                    <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
-                </div>
-            </div>
-        </div>
-        </header>
-        <header class="py-5">
-            <div class="container px-lg-5">
-                <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-                    <div class="m-4 m-lg-5">
-                        <h1 class="fs-4 fw-bold">패스워드 파일 보호</h1>
-                        <p></p>
-                        <p class="mb-0">양호 : 쉐도우 패스워드를 사용하거나, 패스워드를 암호화하여 저장하는 경우</p>
-                        <p class="mb-0">취약 : 쉐도우 패스워드를 사용하지 않고, 패스워드를 암호화하여 저장하지 않는 경우</p>
-                        <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- Page Content-->
-        <section class="pt-4">
-            <!--<div class="container px-lg-5">-->
-            <!-- Page Features-->
-            <div class="row gx-lg-5">
+            </header>
+<!--            <header class="py-5">-->
+<!--            <div class="container px-lg-5">-->
+<!--                <div class="p-4 p-lg-5 bg-light rounded-3 text-center">-->
+<!--                    <div class="m-4 m-lg-5">-->
+<!--                        <h1 class="fs-4 fw-bold">계정 잠금 임계값 설정</h1>-->
+<!--                        <p></p>-->
+<!--                        <p class="mb-0">양호 : 계정 잠금 임계값이 5 이하의 값으로 설정되어 있는 경우</p>-->
+<!--                        <p class="mb-0">취약 : 계정 잠금 임계값이 설정되이 있지 않거나, 5 이하의 값으로 설정되어 있지 않은 경우</p>-->
+<!--                        &lt;!&ndash;                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            </header>-->
+<!--            <header class="py-5">-->
+<!--            <div class="container px-lg-5">-->
+<!--                <div class="p-4 p-lg-5 bg-light rounded-3 text-center">-->
+<!--                    <div class="m-4 m-lg-5">-->
+<!--                        <h1 class="fs-4 fw-bold">패스워드 최대 사용 기간 설정</h1>-->
+<!--                        <p></p>-->
+<!--                        <p class="mb-0">양호 : 패스워드의 최대 사용 기간이 90일 이내로 설정되어 있는 경우</p>-->
+<!--                        <p class="mb-0">취약 : 패스워드의 최대 사용 기간이 없거나, 90일 이내로 설정되어 있지 않은 경우</p>-->
+<!--                        &lt;!&ndash;                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            </header>-->
+<!--            <header class="py-5">-->
+<!--                <div class="container px-lg-5">-->
+<!--                    <div class="p-4 p-lg-5 bg-light rounded-3 text-center">-->
+<!--                        <div class="m-4 m-lg-5">-->
+<!--                            <h1 class="fs-4 fw-bold">패스워드 파일 보호</h1>-->
+<!--                            <p></p>-->
+<!--                            <p class="mb-0">양호 : 쉐도우 패스워드를 사용하거나, 패스워드를 암호화하여 저장하는 경우</p>-->
+<!--                            <p class="mb-0">취약 : 쉐도우 패스워드를 사용하지 않고, 패스워드를 암호화하여 저장하지 않는 경우</p>-->
+<!--                            &lt;!&ndash;                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>&ndash;&gt;-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </header>-->
+            <!-- Page Content-->
+            <section class="pt-4">
+                <!--<div class="container px-lg-5">-->
+                <!-- Page Features-->
+                <div class="row gx-lg-5">
 <!--                <div class="col-lg-6 col-xxl-4 mb-5">-->
 <!--                    <div class="card bg-light border-0 h-100">-->
 <!--                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">-->
@@ -308,6 +390,7 @@
                 <!-- /.container-fluid -->
 
             </div>
+        </div>
             <!-- End of Main Content -->
 
             <!-- Footer -->
