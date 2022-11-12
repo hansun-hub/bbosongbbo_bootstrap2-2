@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,6 +21,17 @@ public class vuln_type_statsService {
         return vuln_type_statsRepository.findAllDesc().stream()
                 .map(vuln_type_statsResponseDto::new)
                 .collect(Collectors.toList());
+    }
+
+    @Transactional
+    public List<vuln_type_statsResponseDto> findByStats_Date(Date date) {
+        return vuln_type_statsRepository.findByStats_Date(date).stream()
+                .map(vuln_type_statsResponseDto::new)
+                .collect(Collectors.toList());
+
+//        vuln_type_stats entity = vuln_type_statsRepository.findByStats_Date(date);
+//
+//        return new vuln_type_statsResponseDto(entity);
     }
 
 }
