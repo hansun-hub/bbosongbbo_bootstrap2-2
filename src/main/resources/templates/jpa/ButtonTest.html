@@ -1,40 +1,193 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:fmt="http://java.sun.com/jsp/jstl/fmt">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Item List</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BBO - main</title>
+    <link rel="favicon" href="./img/favicon.ico">
+
+    <!-- Custom fonts for this template-->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+
 </head>
-<body>
+<body id="page-top">
 
-<div>
-    <h2>itemList.html</h2>
-    <p>현재 <span th:text="${#lists.size(members)}" style="font-weight:bold">10</span>건의 예약정보가 등록되었습니다.</p>
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <img src ="../img/bbo_logo_175.png" alt ="bbo icon" width="60" height="60">
+                <!--                    <i class="fas fa-cloud-moon"></i>-->
+            </div>
+            <div class="sidebar-brand-text mx-3"> <sup></sup></div>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+            <a class="nav-link" href="/">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Addons
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+               aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Pages</span>
+            </a>
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Login Screens:</h6>
+                    <a class="collapse-item" href="../login.html">Login</a>
+                    <a class="collapse-item" href="../forgot-password.html">Forgot Password</a>
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">Other Pages:</h6>
+                    <a class="collapse-item" href="../vuln-test.html">취약점 진단 예약</a>
+                    <a class="collapse-item" href="../ime-vuln-test.html">취약점 즉시 진단</a>
+                    <a class="collapse-item" onClick="../location.href='jpa/ButtonTest.html';" >진단 예약 확인</a>
+
+                </div>
+            </div>
+        </li>
+
+        <!-- Nav Item - Charts -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages2"
+               aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>조치방법 및 가이드</span></a>
+            </a>
+
+            <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="../account.html">계정관리</a>
+                    <a class="collapse-item" href="../fileAndDir.html">파일 및 디렉토리 관리</a>
+                    <a class="collapse-item" href="../service.html">서비스 관리</a>
+                </div>
+            </div>
+        </li>
+
+        <!--        &lt;!&ndash; Nav Item - Charts &ndash;&gt;-->
+        <!--        <li class="nav-item">-->
+        <!--            <a class="nav-link" href="charts.html">-->
+        <!--                <i class="fas fa-fw fa-chart-area"></i>-->
+        <!--                <span>조치방법 및 가이드</span></a>-->
+        <!--        </li>-->
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="../tables.html">
+                <i class="fas fa-fw fa-table"></i>
+                <span>보안공지</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+    <!--사이드 바 끝입니다.-->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column bg-white">
+
+        <!-- Main Content -->
+        <!--    <div class="bg-dark" id="content">-->
+
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-lg-5">
+                <a class="navbar-brand" href="#!"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+<!--                <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">-->
+<!--                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">취약점 설명</a></li>-->
+<!--                        &lt;!&ndash;                <li class="nav-item"><a class="nav-link" href="index.html"> home </a></li>&ndash;&gt;-->
+<!--                        <li class="nav-item"><a class="nav-link" href="#!" onClick="location.href='vuln-test.html';"> 점검하러가기</a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+            </div>
+        </nav>
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+            <br>
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-black"><big>진단 예약 확인</big></h1>
+            </div>
+            <div>
+                <p>현재 <span th:text="${#lists.size(members)}" style="font-weight:bold">10</span>건의 예약정보가 등록되었습니다.</p>
+                <table cellpadding="10" border="1">
+                    <thead>
+                    <tr>
+                        <th width="50">#</th>
+                        <th>schedule_run_date</th>
+                        <th>schedule_id</th>
+                        <th>shell_num</th>
+                        <th>schedule_reg_date</th>
+                        <th>Edit</th>
+                        <th>Del</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each=" member : ${members}">
+                        <th th:text="${member.num}"></th>
+                        <th th:text="${member.schedule_run_date}">홍길동</th>
+                        <th th:text="${member.schedule_id}">중앙동</th>
+                        <th th:text="${member.shell_num}">고잔동</th>
+                        <th th:text="${member.schedule_reg_date}">고잔동</th>
+                        <th><a href="#">수정</a></th>
+                        <th><a href="#">삭제</a></th>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
 
 
-    <table cellpadding="10" border="1">
-        <thead>
-        <tr>
-            <th width="50">#</th>
-            <th>schedule_run_date</th>
-            <th>schedule_id</th>
-            <th>shell_num</th>
-            <th>schedule_reg_date</th>
-            <th>Edit</th>
-            <th>Del</th>
-        </tr>
-        </thead>
-        <tbody>
-            <tr th:each=" member : ${members}">
-                <th th:text="${member.num}"></th>
-                <th th:text="${member.schedule_run_date}">홍길동</th>
-                <th th:text="${member.schedule_id}">중앙동</th>
-                <th th:text="${member.shell_num}">고잔동</th>
-                <th th:text="${member.schedule_reg_date}">고잔동</th>
-                <th><a href="#">수정</a></th>
-                <th><a href="#">삭제</a></th>
-            </tr>
-        </tbody>
-    </table>
+
 </div>
-</body>
-</html>
+<!-- Bootstrap core JavaScript-->
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="../js/sb-admin-2.min.js"></script>

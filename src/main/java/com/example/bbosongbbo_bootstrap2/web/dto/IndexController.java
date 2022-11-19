@@ -1,7 +1,10 @@
 package com.example.bbosongbbo_bootstrap2.web.dto;
 
+import com.example.bbosongbbo_bootstrap2.entity.Member;
+import com.example.bbosongbbo_bootstrap2.repository.MemberRepository;
 import com.example.bbosongbbo_bootstrap2.services.posts.PostsService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +14,9 @@ import java.util.List;
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
+
+    @Autowired
+    private MemberRepository memberRepository;
 
     private final PostsService postsService;
     private final com.example.bbosongbbo_bootstrap2.services.posts.vuln_type_statsService vuln_type_statsService;
@@ -56,7 +62,6 @@ public class IndexController {
 
         return "posts-update.html";
     }
-
 
 
 }

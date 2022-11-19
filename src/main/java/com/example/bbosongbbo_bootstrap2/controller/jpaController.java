@@ -76,15 +76,25 @@ public class jpaController {
 
         return "jpa/ButtonTest.html";
     }
+    @RequestMapping(value = "static/bookList.html", method = RequestMethod.GET)
+    public String bookList(Model model) {
+
+        //JPA 방식
+        List<Member> members = memberRepository.findAll();
+
+        //객체리스트 전달 - 모델에 담아서 리스트 뷰페이지로 전달
+        model.addAttribute("members", members);
+
+        return "static/bookList.html";
+    }
+
+
     @RequestMapping(value = "../../static/404.html", method = RequestMethod.GET)
     public String Test() {
 
         return "../../static/404.html";
     }
 
-    @RequestMapping("/jpa")
-    @GetMapping("/ButtonTest")
-    public String doIns() { return "/jpa/ButtonTest";}
 
 
     /*

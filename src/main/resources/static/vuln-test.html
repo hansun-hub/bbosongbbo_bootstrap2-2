@@ -134,6 +134,7 @@
                             <div class="collapse-divider"></div>
                             <h6 class="collapse-header">Other Pages:</h6>
                             <a class="collapse-item" href="vuln-test.html">취약점 진단</a>
+                            <a class="collapse-item" onClick="location.href='jpa/ButtonTest.html';" >진단 예약 확인</a>
                         </div>
                     </div>
                 </li>
@@ -318,7 +319,7 @@
 
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-white">진단 등록 (즉시 진단 및 예약 가능)</h1>
+                            <h1 class="h3 mb-0 text-white">진단 예약 등록 </h1>
                         </div>
 
 <!--                        <div class="a">안녕하세요 김한선입니다.</div>-->
@@ -334,7 +335,7 @@
                                 <!--<div class="col-md-4">-->
                                     <form action="/jpa/bookingList" method="POST" id="diagnoseform">
                                         <div class="form-group">
-                                            <label for="schedule_run_date">&nbsp;&nbsp;&nbsp; 일시 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="datetime-local" id="schedule_run_date" name="schedule_run_date"> </label>
+                                            <label for="schedule_run_date">&nbsp;&nbsp;&nbsp; 일시 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="datetime-local" id="schedule_run_date" name="schedule_run_date" value=""> </label>
                                         </div>
 <!--                                        <div>-->
 <!--                                            <button class="btn btn-primary" onClick="location.href='jpa/diagnoseItemSelect.html';">  진단항목 선택하기2  </button>-->
@@ -613,7 +614,7 @@
 
 
                                     <br>
-                                    <button type="submit" class="btn btn-primary" id="btn-save" form="diagnoseform">  등록하기  </button>
+                                    <button type="submit" class="btn btn-primary" id="btn-save" form="diagnoseform">  예약 하기  </button>
                                     <button class="btn btn-primary" onClick="location.href='jpa/ButtonTest.html';">  예약 조회하기  </button>
                                 <!--</div>-->
                             </div>

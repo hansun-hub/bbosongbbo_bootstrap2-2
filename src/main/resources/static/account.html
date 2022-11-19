@@ -60,6 +60,10 @@
         // select element에서 선택된 option의 text가 저장된다.
         var selectText = langSelect.options[langSelect.selectedIndex].text;
         var gradeCd = $("#accountVuln > option:selected").attr("value2");
+        //enter 위한 value3
+        var gradeCd2 = $("#accountVuln > option:selected").attr("value3");
+        //취약도 위한 vuln_gage1
+        var gradeCd3 = $("#accountVuln > option:selected").attr("vuln_gage1");
         // var gradeCd3 = $("#accountVuln > option:selected").attr("value3");
         // var gradeCd4 = $("#accountVuln > option:selected").attr("value4");
         // var gradeCd5 = $("#accountVuln > option:selected").attr("value5");
@@ -68,6 +72,9 @@
         document.getElementById("subText").innerHTML = selectValue;
         document.getElementById("mainText").innerHTML = selectText;
         document.getElementById("mainText2").innerHTML = gradeCd;
+        document.getElementById("subText2").innerHTML = gradeCd2;
+        document.getElementById("vuln_gage").innerHTML = gradeCd3;
+
         // document.getElementById("mainText3").innerHTML = gradeCd3;
         // document.getElementById("mainText4").innerHTML = gradeCd4;
         // document.getElementById("mainText5").innerHTML = gradeCd5;
@@ -175,6 +182,7 @@
                     <div class="collapse-divider"></div>
                     <h6 class="collapse-header">Other Pages:</h6>
                     <a class="collapse-item" href="vuln-test.html">취약점 진단</a>
+                    <a class="collapse-item" onClick="location.href='jpa/ButtonTest.html';" >진단 예약 확인</a>
                 </div>
             </div>
         </li>
@@ -242,37 +250,42 @@
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-black"><big>계정관리</big></h1>
                 <select name="accountVuln" id="accountVuln" onchange="chageLangSelect()">
-                    <option value="취약점 항목 선택">&nbsp취약점 항목 선택&nbsp</option>
+                    <option value="취약점 항목을 확인하세요" value3="" vuln_gage1="취약도를 확인하세요"value2="조치 방법을 확인하세요">&nbsp취약점 항목 선택&nbsp</option>
 
                     <option value="각종 공격(무작위 대입 공격, 사전 대입 공격 등)을 통해 root 원격 접속 차단이 적용되지 않은
-                                시스템의 root 계정 정보를 비인가자가 획득할 경우 시스템 계정 정보 유출, 파일 및
+                                시스템의 root 계정 정보를"
+                            value3="비인가자가 획득할 경우 시스템 계정 정보 유출, 파일 및
                             디렉터리 변조 등의 행위 챔해사고가 발생할 수 있다."
+                            vuln_gage1="취약도 : 상"
                             value2="/etc/security 파일에서 pts/0 ~ pts/x 설정 제거 또는, 주석 처리">U-01. root 계정 원격 접속 제한</option>
 
 
+
                     <option value="패스워드 복잡성 설정이 되어 있지 않은 사용자 계정 패스워드 존재 시
-                    비인가자가 각종 공격(무작위 대입 공격, 사전 대입 공격 등)을 통해 취약한
-                    패스워드가 설정된 사용자 계정의 패스워드를 획득하여 획득한 사용자 계정 정보를 통해 해당
+                    비인가자가 각종 공격을 통해 취약한 패스워드가 설정된 "
+                    value3="사용자 계정의 패스워드를 획득하여 획득한 사용자 계정 정보를 통해 해당
                     사용자 계정의 시스템에 접근할 수 있는 위험이 존재한다. "
                             value2="/etc/pam.d/common-password 파일 또는
                     /etc/security/pwquality.conf 파일 편집"
+                            vuln_gage1="취약도 : 상"
                     >U-02. 패스워드 복잡성 설정</option>
 
 
                     <option value="로그인 실패 임계값이 설정되어 있지 않을 경우 반복되는 로그인 시도에 대한 차단이
-                    이루어지지 않아 각종 공격 (무작위 대입 공격, 사전 대입 공격, 추측 공격 등)에
-                    취약하여 비인가자에게 사용자 계정 패스워드를 유출 당할 수 있다."
+                    이루어지지 않아 "
+                    value3="각종 공격에 취약하여 비인가자에게 사용자 계정 패스워드를 유출 당할 수 있다."
                             value2=" 1) /etc/pam.d/common-auth  파일 내 설정 값을 변경,
                             2) /etc/pam.d/system-auth 및 /etc/pam.d/password-auth 파일 내 설정 값 변경">U-03. 계정 잠금 임계값 설정</option>
 
-                    <option value="패스워드 최대 사용기간을 설정하지 않은 경우 비인가자의 각종 공격 (무작위 대입 공격,
-                    사전 대입 공격 등)을 시도할 수 있는 기간 제한이 없으므로 공격자 입장에서는
-                    장기적인 공격을 시행할 수 있어 시행한 기간에 비례하여 시용자 패스워드가 유출될 수 있는
-                    확률이 증가한다." value2="User 생성 시 패스워드 최대 사용시간 적용">U-04. 패스워드 최대 사용 기간 설정</option>
+                    <option value="패스워드 최대 사용기간을 설정하지 않은 경우 비인가자의 각종 공격을 시도할 수 있는 기간 제한이 없으므로 공격자 입장에서는"
+                    value3="장기적인 공격을 시행할 수 있어 시행한 기간에 비례하여 시용자 패스워드가 유출될 수 있는
+                    확률이 증가한다." value2="User 생성 시 패스워드 최대 사용시간 적용"
+                            vuln_gage1="취약도 : 중">U-04. 패스워드 최대 사용 기간 설정</option>
 
 
-                    <option value="비인가자에 의해 사용자 계정 패스워드가 평문으로 저장된 파일이 유출된 경우
-                    시스템 사용자 계정 패스워드가 노출될 수 있다." value2="쉐도우 패스워드 정책 적용 또는 일반 패스워드 정책 적용">U-05. 패스워드 파일 보호</option>
+                    <option value="비인가자에 의해 사용자 계정 패스워드가 평문으로 저장된 파일이 유출된 경우"
+                    value3="시스템 사용자 계정 패스워드가 노출될 수 있다." value2="쉐도우 패스워드 정책 적용 또는 일반 패스워드 정책 적용"
+                            vuln_gage1="취약도 : 상">U-05. 패스워드 파일 보호</option>
                 </select>
             </div>
             <!--<div class="container-fluid">-->
@@ -286,12 +299,19 @@
                         <div class="m-4 m-lg-5">
                             <p></p>
                             <p class="mb-0" id="subText">각종 공격(무작위 대입 공격, 사전 대입 공격 등)을 통해 root 원격 접속 차단이 적용되지 않은
-                                시스템의 root 계정 정보를 비인가자가 획득할 경우 시스템 계정 정보 유출, 파일 및
+                                시스템의 root 계정 정보를 </p>
+                            <p class="mb-0" id="subText2">비인가자가 획득할 경우 시스템 계정 정보 유출, 파일 및
                             디렉터리 변조 등의 행위 챔해사고가 발생할 수 있다.</p>
                         </div>
                     </div>
                 </div>
             </header>
+            <header class="py-5">
+                <div class="container px-lg-5">
+                    <h1 class="fs-4 fw-bold" id="vuln_gage">  취약도 : 상 </h1>
+                </div>
+            </header>
+
             <header class="py-5">
                 <div class="container px-lg-5">
                     <h1 class="fs-4 fw-bold">취약점 조치 방법</h1>
@@ -302,11 +322,6 @@
                             <p class="mb-0" id="mainText2">/etc/security 파일에서 pts/0 ~ pts/x 설정 제거 또는, 주석 처리</p>
 <!--                            <p class="mb-0">취약 : 영문, 숫자, 특수문자를 조합하지 않거나 2종류 조합 시 10자리 미만, 2종류 이상 조합 시 8자리 미만의 패스워드가 설정된 경우(공공기관 9자리 미만)</p>-->
                             <!--                <a class="btn btn-primary btn-lg" href="#!">취약점 자세히 보기</a>-->
-                            <p class="mb-0" id="mainText3"></p>
-                            <p class="mb-0" id="mainText4"></p>
-                            <p class="mb-0" id="mainText5"></p>
-                            <p class="mb-0" id="mainText6"></p>
-                            <p class="mb-0" id="mainText7"></p>
                         </div>
                     </div>
                 </div>

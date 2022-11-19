@@ -60,10 +60,13 @@
     // select element에서 선택된 option의 text가 저장된다.
     var selectText = langSelect.options[langSelect.selectedIndex].text;
     var gradeCd = $("#accountVuln > option:selected").attr("value2");
+    var gradeCd2 = $("#accountVuln > option:selected").attr("value3");
+    var gradeCd3 = $("#accountVuln > option:selected").attr("vuln_gage1");
     document.getElementById("subText").innerHTML = selectValue;
     document.getElementById("mainText").innerHTML = selectText;
+    document.getElementById("subText2").innerHTML = gradeCd2;
     document.getElementById("mainText2").innerHTML = gradeCd;
-
+    document.getElementById("vuln_gage").innerHTML = gradeCd3;
 
   }
 </script>
@@ -164,6 +167,8 @@
           <div class="collapse-divider"></div>
           <h6 class="collapse-header">Other Pages:</h6>
           <a class="collapse-item" href="vuln-test.html">취약점 진단</a>
+          <a class="collapse-item" onClick="location.href='jpa/ButtonTest.html';" >진단 예약 확인</a>
+
         </div>
       </div>
     </li>
@@ -231,68 +236,87 @@
       <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-black"><big>파일 및 디렉토리 관리</big></h1>
         <select name="accountVuln" id="accountVuln" onchange="chageLangSelect()">
-          <option value="취약점 항목 선택">&nbsp취약점 항목 선택&nbsp</option>
+          <option value="취약점 항목을 확인하세요"value3="" vuln_gage1="취약도를 확인하세요"value2="조치 방법을 확인하세요">&nbsp취약점 항목 선택&nbsp</option>
 
           <option value="관리자가 명령어 (예: ls, mv, cp 등)를 수행했을 root 계정의 PATH 환경변수에 “.”
-          (현재 디렉터리 지칭)이 포함되어 있으면 현재 디렉터리에 명령어와 같은 이름의 악성파일이 실행되어 악의적인
-           행위가 일어날 수 있다." value2="vi 편집기를 이용하여 root 계정의 설정파일 (~/.profile 과 /etc/profile)을 연 후, 코드 수정">U-06. root 홈, 패스 디렉터리 권한 및 패스 설정</option>
+          (현재 디렉터리 지칭)이 포함되어 있으면 "
+                  value3="현재 디렉터리에 명령어와 같은 이름의 악성파일이 실행되어 악의적인
+           행위가 일어날 수 있다." value2="vi 편집기를 이용하여 root 계정의 설정파일 (~/.profile 과 /etc/profile)을 연 후, 코드 수정"
+                  vuln_gage1="취약도 : 상">U-06. root 홈, 패스 디렉터리 권한 및 패스 설정</option>
 
-          <option value="삭제된 소유자의 UID와 동일한 사용자가 해당 파일, 디렉터리에 접근 가능하여 사용자 정보 등 중요 정보가 노출될 위험이 있다."
+          <option value="삭제된 소유자의 UID와 동일한 사용자가 해당 파일, 디렉터리에 접근 가능하여 "
+                  value3="사용자 정보 등 중요 정보가 노출될 위험이 있다."
                   value2="소유자가 존재하지 않는 파일이나 디렉터리가 불필요한 경우 rm 명령으로 삭제 또는
-                  필요한 경우 chown 명령으로 소유자 및 그룹 변경">U-07. 파일 및 디렉터리 소유자 설정</option>
+                  필요한 경우 chown 명령으로 소유자 및 그룹 변경"
+                  vuln_gage1="취약도 : 상">U-07. 파일 및 디렉터리 소유자 설정</option>
 
 
           <option value="관리자(root) 외 사용자가 /etc/passwd 파일의 변조가 가능할 경우
-          shell 변조, 사용자 추가/삭제, root를 포함한 사용자 권한 획득 시도 등 악의적인 행위가 가능하다."
-                  value2="/etc/passwd 파일의 소유자 및 권한 변경(소유자 root, 권한 644)">U-08. /etc/passwd 파일 소유자 및 권한 설정</option>
+          shell 변조, 사용자 추가/삭제, "
+          value3="root를 포함한 사용자 권한 획득 시도 등 악의적인 행위가 가능하다."
+                  value2="/etc/passwd 파일의 소유자 및 권한 변경(소유자 root, 권한 644)"
+                  vuln_gage1="취약도 : 상">U-08. /etc/passwd 파일 소유자 및 권한 설정</option>
 
 
-          <option value="해당 파일에 대한 권한 관리가 이루어지지 않을 시 ID 및 패스워드 정보가 외부 로 노출될 수 있다."
-                  value2="/etc/shadow 파일의 소유자 및 권한 변경 (소유자 root, 권한 400)">U-09. /etc/shadow 파일 소유자 및 권한 설정</option>
+          <option value="해당 파일에 대한 권한 관리가 이루어지지 않을 시 "
+                  value3="ID 및 패스워드 정보가 외부 로 노출될 수 있다."
+                  value2="/etc/shadow 파일의 소유자 및 권한 변경 (소유자 root, 권한 400)"
+                  vuln_gage1="취약도 : 상">U-09. /etc/shadow 파일 소유자 및 권한 설정</option>
 
 
-          <option value="hosts 파일에 비인가자 쓰기 권한이 부여된 경우, 공격자는 hosts파일에 악의적인 시스템을 등록하여,
-          이를 통해 정상적인 DNS를 우회하여 악성사이트로의 접속 을 유도하는 파밍(Pharming) 공격 등에 악용될 수 있다."
-                  value2="/etc/hosts 파일의 퍼미션을 644로, 소유자를 root로 변경">U-10. /etc/hosts 파일 소유자 및 권한 설정</option>
+          <option value="hosts 파일에 비인가자 쓰기 권한이 부여된 경우, 공격자는 hosts파일에 악의적인 시스템을 등록하여,"
+          value3="이를 통해 정상적인 DNS를 우회하여 악성사이트로의 접속 을 유도하는 파밍(Pharming) 공격 등에 악용될 수 있다."
+                  value2="/etc/hosts 파일의 퍼미션을 644로, 소유자를 root로 변경"
+                  vuln_gage1="취약도 : 상">U-10. /etc/hosts 파일 소유자 및 권한 설정</option>
 
 
-          <option value="(x)inetd.conf 파일에 비인가자의 쓰기 권한이 부여되어 있을 경우, 비인가자가 악의적인 프로그램을
+          <option value="(x)inetd.conf 파일에 비인가자의 쓰기 권한이 부여되어 있을 경우, "
+                  value3="비인가자가 악의적인 프로그램을
           등록하여 root 권한으로 불법적인 서비스를 실행할 수 있다."
-                  value2="/etc/(x)inetd.conf 파일의 퍼미션과 소유자를 확인">U-11. /etc/(x)inetd.conf 파일 소유자 및 권한 설정</option>
+                  value2="/etc/(x)inetd.conf 파일의 퍼미션과 소유자를 확인"
+                  vuln_gage1="취약도 : 상">U-11. /etc/(x)inetd.conf 파일 소유자 및 권한 설정</option>
 
-          <option value="(r)syslog.conf 파일의 접근권한이 적절하지 않을 경우, 임의적인 파일 변조로 인 해 침입자의 흔적 또는,
-          시스템 오류 사항을 분석하기 위해 반드시 필요한 시스템 로그가 정상적으로 기록되지 않을 수 있다."
-                  value2="/etc/(r)syslog.conf 파일의 퍼미션을 644로, 소유자를 root로 변경">U-12. /etc/(r)syslog.conf 파일 소유자 및 권한 설정</option>
+          <option value="(r)syslog.conf 파일의 접근권한이 적절하지 않을 경우, 임의적인 파일 변조로 인해 침입자의 흔적 또는,"
+                  value3=" 시스템 오류 사항을 분석하기 위해 반드시 필요한 시스템 로그가 정상적으로 기록되지 않을 수 있다."
+                  value2="/etc/(r)syslog.conf 파일의 퍼미션을 644로, 소유자를 root로 변경"
+                  vuln_gage1="취약도 : 상">U-12. /etc/(r)syslog.conf 파일 소유자 및 권한 설정</option>
 
-          <option value="services 파일의 접근권한이 적절하지 않을 경우 비인가 사용자가 운영 포트 번 호를 변경하여 정상적인 서비스를
-           제한하거나, 허용되지 않은 포트를 오픈하여 악성 서비스를 의도적으로 실행할 수 있다."
-                  value2="/etc/services 파일의 퍼미션을 644로, 소유자를 root로 변경">U-13. /etc/services 파일 소유자 및 권한 설정</option>
+          <option value="services 파일의 접근권한이 적절하지 않을 경우 비인가 사용자가 운영 포트 번호를 변경하여 "
+                  value3="정상적인 서비스를 제한하거나, 허용되지 않은 포트를 오픈하여 악성 서비스를 의도적으로 실행할 수 있다."
+                  value2="/etc/services 파일의 퍼미션을 644로, 소유자를 root로 변경"
+                  vuln_gage1="취약도 : 상">U-13. /etc/services 파일 소유자 및 권한 설정</option>
 
-          <option value="SUID, SGID 파일의 접근권한이 적절하지 않을 경우 SUID, SGID 설정된 파일로 특정 명령어를 실행하여
-          root 권한 획득 및 정상 서비스 장애를 발생시킬 수 있다."
+          <option value="SUID, SGID 파일의 접근권한이 적절하지 않을 경우 SUID, SGID 설정된 파일로 "
+                  value3="특정 명령어를 실행하여 root 권한 획득 및 정상 서비스 장애를 발생시킬 수 있다."
                   value2="반드시 사용이 필요한 경우 특정 그룹에서만 사용하도록 제한하는 방법
-                  （일반 사 용자의 Setuid 사용을 제한함, 임의의 그룹만 가능）">U-14. SUID, SGID, Sticky bit 설정 파일 점검</option>
+                  （일반 사 용자의 Setuid 사용을 제한함, 임의의 그룹만 가능）"
+                  vuln_gage1="취약도 : 상">U-14. SUID, SGID, Sticky bit 설정 파일 점검</option>
 
-          <option value="홈 디렉터리 내의 사용자 파일 및 사용자별 시스템 시작파일 등과 같은 환경변수 파일의 접근권한 설정이 적절하지 않을 경우
-           비인가자가 환경변수 파일을 변조 하여 정상 사용중인 사용자의 서비스가 제한될 수 있다."
-                  value2="소유자 변경 방법,일반 사용자 쓰기 권한 제거 방법">U-15. 사용자, 시스템 시작파일 및 환경파일 소유자 및 권한 설정</option>
+          <option value="홈 디렉터리 내의 사용자 파일 및 사용자별 시스템 시작파일 등과 같은 환경변수 파일의 접근권한 설정이 "
+           value3="적절하지 않을 경우 비인가자가 환경변수 파일을 변조 하여 정상 사용중인 사용자의 서비스가 제한될 수 있다."
+                  value2="소유자 변경 방법,일반 사용자 쓰기 권한 제거 방법"
+                  vuln_gage1="취약도 : 상">U-15. 사용자, 시스템 시작파일 및 환경파일 소유자 및 권한 설정</option>
 
-          <option value="시스템 파일과 같은 중요 파일에 world writable 설정이 될 경우, 악의적인 사용 자가 해당 파일을 마음대로 파일을
-          덧붙이거나 지울 수 있게 되어 시스템의 무단 접근 및 시스템 장애를 유발할 수 있다."
-                  value2="일반 사용자 쓰기 권한 제거 방법, 파일 삭제 방법">U-16. world writable 파일 점검</option>
+          <option value="시스템 파일과 같은 중요 파일에 world writable 설정이 될 경우, 악의적인 사용자가 해당 파일을 "
+                  value3="마음대로 파일을 덧붙이거나 지울 수 있게 되어 시스템의 무단 접근 및 시스템 장애를 유발할 수 있다."
+                  value2="일반 사용자 쓰기 권한 제거 방법, 파일 삭제 방법"
+                  vuln_gage1="취약도 : 상">U-16. world writable 파일 점검</option>
 
-          <option value="rlogin, rsh 등과 같은 'r' command의 보안 설정이 적용되지 않은 경우, 원격지의 공격자가 관리자 권한으로 목표
-          시스템상의 임의의 명령을 수행시킬 수 있으며, 명 령어 원격 실행을 통해 중요 정보 유출 및 시스템 장애를 유발시킬 수 있다. 또한 공격자
-          백도어 등으로도 활용될 수 있다." value2="1) .rhosts, hosts.equiv 파일 삭제, 2) /etc/hosts.equiv 및 $HOME/.rhosts 파일의
-          소유자를 root 또는, 해당 계정 으로 변경">U-17. $HOME/.rhosts, hosts.equiv 사용 금지</option>
+          <option value="'r' command의 보안 설정이 적용되지 않은 경우, 원격지의 공격자가 관리자 권한으로 임의의 명령을 수행시킬 수 있으며, "
+                  value3="명령어 원격 실행을 통해 중요 정보 유출 및 시스템 장애를 유발시킬 수 있다. 또한 공격자
+          백도어 등으로도 활용될 수 있다."
+                  value2="1) .rhosts, hosts.equiv 파일 삭제, 2) /etc/hosts.equiv 및 $HOME/.rhosts 파일의
+          소유자를 root 또는, 해당 계정 으로 변경"
+                  vuln_gage1="취약도 : 상">U-17. $HOME/.rhosts, hosts.equiv 사용 금지</option>
 
-          <option value="허용할 호스트에 대한 IP 및 포트제한이 적용되지 않은 경우, Telnet, FTP같은 보안에 취약한 네트워크 서비스를
-          통하여 불법적인 접근 및 시스템 침해사고가 발생 할 수 있다." value2="vi 편집기를 이용하여 /etc/hosts.allow 파일을 연 후 쉘코드로
-          코드 수정">U-18. 접속 IP 및 포트 제한</option>
+          <option value="허용할 호스트에 대한 IP 및 포트제한이 적용되지 않은 경우, Telnet, FTP같은 보안에 취약한"
+                  value3=" 네트워크 서비스를 통하여 불법적인 접근 및 시스템 침해사고가 발생 할 수 있다." value2="vi 편집기를 이용하여 /etc/hosts.allow 파일을 연 후 쉘코드로
+          코드 수정"vuln_gage1="취약도 : 상">U-18. 접속 IP 및 포트 제한</option>
 
-          <option value="root 외 일반사용자에게도 crontab 명령어를 사용할 수 있도록 할 경우,
-          고의 또는 실수로 불법적인 예약 파일 실행으로 시스템 피해를 일으킬 수 있다."
-                  value2="/etc/cron.allow 및 /etc/cron.deny 파일의 소유자 및 권한 변경">U-19. cron 파일 소유자 및 권한 설정</option>
+          <option value="root 외 일반사용자에게도 crontab 명령어를 사용할 수 있도록 할 경우,"
+                  value3="고의 또는 실수로 불법적인 예약 파일 실행으로 시스템 피해를 일으킬 수 있다."
+                  value2="/etc/cron.allow 및 /etc/cron.deny 파일의 소유자 및 권한 변경"
+                  vuln_gage1="취약도 : 상">U-19. cron 파일 소유자 및 권한 설정</option>
 
         </select>
       </div>
@@ -306,11 +330,18 @@
           <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
             <div class="m-4 m-lg-5">
               <p></p>
-              <p class="mb-0" id="subText">관리자가 명령어 (예: ls, mv, cp 등)를 수행했을 root 계정의 PATH 환경변수에 “.” (현재 디렉터리 지칭)이 포함되어 있으면 현재 디렉터리에 명령어와 같은 이름의 악성파일이 실행되어 악의적인 행위가 일어날 수 있다.</p>
+              <p class="mb-0" id="subText">관리자가 명령어 (예: ls, mv, cp 등)를 수행했을 root 계정의 PATH 환경변수에 “.” (현재 디렉터리 지칭)이 포함되어 있으면 </p>
+              <p class="mb-0" id="subText2">현재 디렉터리에 명령어와 같은 이름의 악성파일이 실행되어 악의적인 행위가 일어날 수 있다.</p>
             </div>
           </div>
         </div>
       </header>
+      <header class="py-5">
+        <div class="container px-lg-5">
+          <h1 class="fs-4 fw-bold" id="vuln_gage">  취약도 : 상 </h1>
+        </div>
+      </header>
+
       <header class="py-5">
         <div class="container px-lg-5">
           <h1 class="fs-4 fw-bold">취약점 조치 방법</h1>
