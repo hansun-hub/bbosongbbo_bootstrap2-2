@@ -1,16 +1,11 @@
 package com.example.bbosongbbo_bootstrap2.entity;
 
-import com.example.bbosongbbo_bootstrap2.domain.BaseTimeEntity;
 import com.example.bbosongbbo_bootstrap2.domain.MemberTimeEntity;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 @Entity
 public class Member extends MemberTimeEntity {
@@ -19,6 +14,8 @@ public class Member extends MemberTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int num;
 
+    @Column
+    private Integer schedule_num;
     @Column
     private String schedule_run_date;
 
@@ -54,13 +51,19 @@ public class Member extends MemberTimeEntity {
         this.num = num;
     }
 
+
+    public Integer getSchedule_num() { return schedule_num;}
+
+
+    public void setSchedule_num(Integer schedule_num) {
+        this.schedule_num = schedule_num;
+    }
+
     public String getSchedule_run_date() {
         return schedule_run_date;
     }
 
-    public void setSchedule_run_date(String schedule_run_date) {
-        this.schedule_run_date = schedule_run_date;
-    }
+    public void setSchedule_run_date(String schedule_run_date) { this.schedule_run_date = schedule_run_date; }
 
     public String getSchedule_id() {
         return schedule_id;
@@ -102,6 +105,7 @@ public class Member extends MemberTimeEntity {
 
     public Member(int num, String schedule_run_date, String schedule_id, String shell_num,String schedule_duration,Integer schedule_repeat) {
         this.num = num;
+        this.schedule_num = schedule_num;
         this.schedule_run_date = schedule_run_date;
         this.schedule_id = schedule_id;
         this.shell_num = shell_num;
@@ -113,7 +117,8 @@ public class Member extends MemberTimeEntity {
     @Override
     public String toString() {
         return "Member{" +
-                "num=" + num +
+                "num=" + num + '\'' +
+                ", schedule_num='" + schedule_num + '\'' +
                 ", schedule_run_date='" + schedule_run_date + '\'' +
                 ", schedule_id='" + schedule_id + '\'' +
                 ", shell_num='" + shell_num + '\'' +

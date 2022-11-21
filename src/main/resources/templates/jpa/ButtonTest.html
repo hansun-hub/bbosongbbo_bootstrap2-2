@@ -157,6 +157,7 @@
                     <thead>
                     <tr>
                         <th width="50">#</th>
+                        <th>schedule_num</th>
                         <th>schedule_run_date</th>
                         <th>schedule_id</th>
                         <th>shell_num</th>
@@ -168,6 +169,7 @@
                     <tbody>
                     <tr th:each=" member : ${members}">
                         <th th:text="${member.num}"></th>
+                        <th th:text="${member.schedule_num}"></th>
                         <th th:text="${member.schedule_run_date}">홍길동</th>
                         <th th:text="${member.schedule_id}">중앙동</th>
                         <th th:text="${member.shell_num}">고잔동</th>
