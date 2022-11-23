@@ -13,19 +13,13 @@ import javax.persistence.Id;
 @Entity
 @NoArgsConstructor
 @Builder
-public class vuln_week_stats {
+public class trendFileandDir {
 
     @Id
     @GeneratedValue
-    private int stats_index;
+    @Column(length = 50)
+    private int schedule_num;
 
-    @Column
-    private int stats_count;
-
-    @Column
-    private int stats_week;
-
-    @Column(length = 30)
-    private String stats_type;
-
+    @Column(length = 20)
+    private int vuln_count;
 }
