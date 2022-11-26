@@ -11,12 +11,10 @@ var tFDChart = {
                 datasets: [{
                     label: "취약점 분류",
                     lineTension: 0.3,
-                    pointRadius: 5,
-                    pointBackgroundColor: "rgba(255, 159, 64, 1)",
-                    pointBorderColor: "rgba(255,255,255,0.8)",
-                    pointHoverRadius: 5,
-                    pointHoverBackgroundColor: "rgba(2,117,216,1)",
-                    pointHitRadius: 50,
+                    fill: false,
+                    borderColor: "rgba(255, 159, 64, 1)",
+                    pointBackgroundColor: "rgba(255,255,255,0.8)",
+                    pointBorderColor: "rgba(255, 159, 64, 1)",
                     pointBorderWidth: 2,
                     data: tFDChart.dataSets,
                 }],
@@ -40,7 +38,7 @@ var tFDChart = {
                         stacked: true,
                         ticks: {
                             min: 0,
-                            max: 7,
+                            max: 14,
                         },
                         gridLines: {
                             color: "rgba(0, 0, 0, .125)",

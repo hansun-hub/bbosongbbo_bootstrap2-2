@@ -11,12 +11,10 @@ var tAChart = {
                 datasets: [{
                     label: "취약점 분류",
                     lineTension: 0.3,
-                    pointRadius: 5,
-                    pointBackgroundColor: "rgba(255, 206, 86, 1)",
-                    pointBorderColor: "rgba(255,255,255,0.8)",
-                    pointHoverRadius: 5,
-                    pointHoverBackgroundColor: "rgba(2,117,216,1)",
-                    pointHitRadius: 50,
+                    fill: false,
+                    borderColor: "rgba(255, 206, 86, 1)",
+                    pointBackgroundColor: "rgba(255,255,255,0.8)",
+                    pointBorderColor: "rgba(255, 206, 86, 1)",
                     pointBorderWidth: 2,
                     data: tAChart.dataSets,
                 }],
@@ -39,8 +37,9 @@ var tAChart = {
                     yAxes: [{
                         stacked: true,
                         ticks: {
+                            stepSize: 1,
                             min: 0,
-                            max: 7,
+                            max: 5,
                         },
                         gridLines: {
                             color: "rgba(0, 0, 0, .125)",

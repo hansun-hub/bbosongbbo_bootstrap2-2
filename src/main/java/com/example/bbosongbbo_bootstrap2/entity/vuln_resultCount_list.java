@@ -20,4 +20,6 @@ public class vuln_resultCount_list {
 
     private int count;
 
+    private int index;
+
 }
