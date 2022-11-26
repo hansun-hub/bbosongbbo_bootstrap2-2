@@ -29,30 +29,22 @@ function draw_vts1_chart(){
                         label: "취약한 개수",
                         lineTension: 0.3,
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(255, 206, 86, 0.2)'],
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(255, 159, 64, 0.5)',
+                            'rgba(255, 206, 86, 0.5)'],
                         borderColor: [
-                            'rgba(255,99,132,1)',
-                            'rgba(255, 159, 64, 1)',
-                            'rgba(255, 206, 86, 1)'],
-                        pointRadius: 5,
-                        pointBackgroundColor: "rgba(2,117,216,1)",
-                        pointBorderColor: "rgba(255,255,255,0.8)",
-                        pointHoverRadius: 5,
-                        pointHoverBackgroundColor: "rgba(2,117,216,1)",
-                        pointHitRadius: 50,
-                        pointBorderWidth: 2,
+                            'rgba(255,99,132,1.5)',
+                            'rgba(255, 159, 64, 1.5)',
+                            'rgba(255, 206, 86, 1.5)'],
+                        //borderWidth: 2,
                         data: myChart.dataSets,
                     }],
                 },
                 options: {
+                    indexAxis: 'y',
                     responsive : true,
                     scales: {
                         xAxes: [{
-                            time: {
-                                unit: 'month'
-                            },
                             gridLines: {
                                 display: false
                             },

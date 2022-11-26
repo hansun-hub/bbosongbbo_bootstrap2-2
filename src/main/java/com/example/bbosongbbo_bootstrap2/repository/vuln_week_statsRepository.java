@@ -1,8 +1,6 @@
 package com.example.bbosongbbo_bootstrap2.repository;
 
-import com.example.bbosongbbo_bootstrap2.domain.posts.vuln_type_stats;
 import com.example.bbosongbbo_bootstrap2.entity.vuln_week_stats;
-import org.springframework.data.domain.Example;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

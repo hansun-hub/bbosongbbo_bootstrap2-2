@@ -13,43 +13,22 @@ var vwsChart = {
                 datasets: [{
                     label: "계정관리",
                     lineTension: 0.3,
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255,99,132,1)',
-                    pointRadius: 5,
-                    pointBackgroundColor: "rgba(2,117,216,1)",
-                    pointBorderColor: "rgba(255,255,255,0.8)",
-                    pointHoverRadius: 5,
-                    pointHoverBackgroundColor: "rgba(2,117,216,1)",
-                    pointHitRadius: 50,
-                    pointBorderWidth: 2,
+                    backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                    borderColor: 'rgba(75, 192, 192, 1.5)',
                     data: vwsChart.dataSets,
                 },
                     {
                         label: "서비스 관리",
                         lineTension: 0.3,
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        pointRadius: 5,
-                        pointBackgroundColor: "rgba(2,117,216,1)",
-                        pointBorderColor: "rgba(255,255,255,0.8)",
-                        pointHoverRadius: 5,
-                        pointHoverBackgroundColor: "rgba(2,117,216,1)",
-                        pointHitRadius: 50,
-                        pointBorderWidth: 2,
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                        borderColor: 'rgba(54, 162, 235, 1.5)',
                         data: vwsChart.dataSetsSE,
                     },
                     {
                         label: "파일 및 디렉토리 관리",
                         lineTension: 0.3,
-                        backgroundColor: 'rgba(255, 159, 64, 0.2)',
-                        borderColor: 'rgba(255, 159, 64, 1)',
-                        pointRadius: 5,
-                        pointBackgroundColor: "rgba(2,117,216,1)",
-                        pointBorderColor: "rgba(255,255,255,0.8)",
-                        pointHoverRadius: 5,
-                        pointHoverBackgroundColor: "rgba(2,117,216,1)",
-                        pointHitRadius: 50,
-                        pointBorderWidth: 2,
+                        backgroundColor: 'rgba(153, 102, 255, 0.5)',
+                        borderColor: 'rgba(153, 102, 255, 1.5)',
                         data: vwsChart.dataSetsFD,
                     }],
             },
@@ -80,7 +59,7 @@ var vwsChart = {
                     }],
                 },
                 legend: {
-                    display: false
+                    display: true
                 }
             }
         });
@@ -97,6 +76,7 @@ var vwsChart = {
             //dataType 정의
             dataType: 'json',
             //요청결과가 성공일 경우
+            async: false,
             success : function(data) {
                 //console.log(data);
                 $.each(data, function(index,obj){
@@ -116,6 +96,7 @@ var vwsChart = {
             //dataType 정의
             dataType: 'json',
             //요청결과가 성공일 경우
+            async: false,
             success : function(data) {
                 //console.log(data);
                 $.each(data, function(index,obj){
@@ -134,6 +115,7 @@ var vwsChart = {
             //dataType 정의
             dataType: 'json',
             //요청결과가 성공일 경우
+            async: false,
             success : function(data) {
                 //console.log(data);
                 $.each(data, function(index,obj){
