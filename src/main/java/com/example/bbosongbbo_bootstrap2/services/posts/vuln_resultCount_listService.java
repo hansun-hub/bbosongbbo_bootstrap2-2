@@ -21,4 +21,11 @@ public class vuln_resultCount_listService {
                 .map(vuln_resultCount_listResponseDto::new)
                 .collect(Collectors.toList());
     }
+
+    @Transactional(readOnly = true)
+    public List<vuln_resultCount_listResponseDto> findFirst2ByOrderByIndexDesc() {
+        return vtrCRepository.findFirst2ByOrderByIndexDesc().stream()
+                .map(vuln_resultCount_listResponseDto::new)
+                .collect(Collectors.toList());
+    }
 }

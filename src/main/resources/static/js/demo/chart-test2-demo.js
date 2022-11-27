@@ -41,7 +41,7 @@ var myChart2 = {
         dataSets= [];
         $.ajax({
             type : 'GET',
-            url : 'vuln_resultCount_list',
+            url : 'vuln_resultCount_list/twoDesc',
             contentType: 'application/json',
             //dataType 정의
             dataType: 'json',

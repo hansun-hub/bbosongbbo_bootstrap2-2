@@ -13,6 +13,9 @@ public class VRClistApiController {
 
     private final com.example.bbosongbbo_bootstrap2.services.posts.vuln_resultCount_listService vuln_resultCount_listService;
 
+    @GetMapping("/vuln_resultCount_list/twoDesc")
+    public List<vuln_resultCount_listResponseDto> findFirst2ByOrderByIndexDesc() {return vuln_resultCount_listService.findFirst2ByOrderByIndexDesc();
+    }
 
     @GetMapping("/vuln_resultCount_list")
     public List<vuln_resultCount_listResponseDto> findAll() {

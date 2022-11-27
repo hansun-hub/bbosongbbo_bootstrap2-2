@@ -10,8 +10,11 @@ public class vuln_resultCount_listResponseDto {
 
     private int count;
 
+    private int index;
+
     public vuln_resultCount_listResponseDto(vuln_resultCount_list entity) {
         this.result = entity.getResult();
         this.count = entity.getCount();
+        this.index = entity.getIndex();
     }
 }
