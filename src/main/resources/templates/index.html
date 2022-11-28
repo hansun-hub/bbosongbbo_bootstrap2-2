@@ -519,6 +519,32 @@
                     </div>
 
                 </div>
+
+                <div class="row">
+                    <div class="col-lg-12 mb-8">
+                            <table class="table table-horizontal table-bordered text-gray-900">
+                                <thead class="thead-strong">
+                                <tr class="bg-white text-center">
+                                    <th class="col-2 border-dark">점검 결과 아이디</th>
+                                    <th class="col-2 border-dark">취약점 진단코드</th>
+                                    <th class="col-3 border-dark">취약점 진단항목</th>
+                                    <th class="col-2 border-dark">취약점 분류</th>
+                                    <th class="col-3 border-dark">점검 결과</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbody">
+                                <tr th:each="vuln_result_list : ${vuln_result_list}" class="bg-white text-center" height="30">
+                                    <td class="border-dark"><span th:text="${vuln_result_list.id}">1</span></td>
+                                    <td class="border-dark"><span th:text="${vuln_result_list.vuln_number}">제목</span></span></td>
+                                    <td class="border-dark"><span th:text="${vuln_result_list.vuln_name}">작성자</span></td>
+                                    <td class="border-dark"><span th:text="${vuln_result_list.vuln_type}">수정 날짜</span></td>
+                                    <td class="border-dark"><span th:text="${vuln_result_list.vuln_result}">수정 날짜</span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+
             </div>
             <!-- /.container-fluid -->
         </div>

@@ -1,8 +1,8 @@
 package com.example.bbosongbbo_bootstrap2.web.dto;
 
-import com.example.bbosongbbo_bootstrap2.entity.Member;
 import com.example.bbosongbbo_bootstrap2.repository.MemberRepository;
 import com.example.bbosongbbo_bootstrap2.services.posts.PostsService;
+import com.example.bbosongbbo_bootstrap2.services.posts.vuln_result_listService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,12 +20,13 @@ public class IndexController {
 
     private final PostsService postsService;
     private final com.example.bbosongbbo_bootstrap2.services.posts.vuln_type_statsService vuln_type_statsService;
+    private final vuln_result_listService vuln_result_listService;
 
 
     @GetMapping("/")
     public String index(Model model)
     {
-        model.addAttribute("vuln_type_stats",vuln_type_statsService.findAllDesc());
+        model.addAttribute("vuln_result_list", vuln_result_listService.findFirst31ByOrderByIdDesc());
         return "index.html";
     }
 
